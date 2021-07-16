@@ -23,7 +23,7 @@ export const Main = styled.main`
   height: 100%;
 `
 export const RightMenu = styled.aside`
-  border-left: 1px solid ${props => props.theme.colors.divider};
+  /* border-left: 1px solid ${props => props.theme.colors.divider}; */
   height: 100vh;
   max-width: 76px;
   width: 100%;

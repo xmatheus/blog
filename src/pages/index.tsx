@@ -1,5 +1,4 @@
-import React, { FC } from 'react'
-import Link from 'next/link'
+import { FC } from 'react'
 import { getAllPosts, Posts } from 'src/services/api'
 import LayoutComplete from 'src/components/layouts/complete'
 // import { AppProps } from 'next/app'

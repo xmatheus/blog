@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef } from 'react'
+import { FC, useContext, useEffect, useRef } from 'react'
 import { ThemeContext } from 'styled-components'
 import Link from 'next/link'
 
@@ -14,18 +14,11 @@ interface PostProps {
   content: string
 }
 
-const Post: React.FC<PostProps> = ({
-  slug,
-  title,
-  summary,
-  tags,
-  time,
-  content
-}) => {
+const Post: FC<PostProps> = ({ slug, title, summary, tags, time, content }) => {
   const canvasRef = useRef(null)
   const theme = useContext(ThemeContext)
 
-  function drawChess(ctx: CanvasRenderingContext2D, size: Number) {
+  function drawChess(ctx: CanvasRenderingContext2D, size: number) {
     for (let i = 0; i < size; i++) {
       for (let j = 0; j < size; j++) {
         ctx.fillStyle = theme.colors.background
@@ -52,13 +45,13 @@ const Post: React.FC<PostProps> = ({
 
     // console.log('size ', size)
 
-    str.split('').map((s, idx) => {
-      if (idx == str.length - 1) return
+    str.split('').forEach((s, idx) => {
+      if (idx === str.length - 1) return
 
-      let aux = s.toLowerCase().charCodeAt(0) - 97 + 1
+      const aux = s.toLowerCase().charCodeAt(0) - 97 + 1
 
-      let x = idx % 2 == 0 ? idx : aux
-      let y = x % 2 == 0 ? aux : idx
+      const x = idx % 2 === 0 ? idx : aux
+      const y = x % 2 === 0 ? aux : idx
 
       ctx.fillStyle = theme.colors.primary
       ctx.fillRect(x, y, 1, 1)
@@ -80,7 +73,7 @@ const Post: React.FC<PostProps> = ({
     const context = canvas.getContext('2d')
 
     drawRectanglePixel(canvas, context, title)
-  }, [])
+  }, [theme])
 
   return (
     <S.Container>

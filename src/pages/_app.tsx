@@ -1,8 +1,8 @@
-import React from 'react'
-import { ThemeProvider } from 'styled-components'
+import { FC } from 'react'
+// import { ThemeProvider } from 'styled-components'
+import { CustomThemeProvider } from 'src/context/theme'
 
 import GlobalStyle from '../styles/global'
-import theme from '../styles/theme'
 import LayoutComplete from 'src/components/layouts/complete/index'
 
 import { Page } from 'src/components/layouts/index'
@@ -12,16 +12,16 @@ type Props = AppProps & {
   Component: Page
 }
 
-const MyApp: React.FC<Props> = ({ Component, pageProps }) => {
+const MyApp: FC<Props> = ({ Component, pageProps }) => {
   const { Layout = LayoutComplete } = Component
   // const Layout = Component.Layout || (children => <>{children}</>)
   return (
-    <ThemeProvider theme={theme}>
+    <CustomThemeProvider>
       <Layout>
         <Component {...pageProps} />
       </Layout>
       <GlobalStyle />
-    </ThemeProvider>
+    </CustomThemeProvider>
   )
 }
 

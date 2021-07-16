@@ -35,7 +35,7 @@ export const ImageAndUserName = styled.div`
 
     letter-spacing: 0.03em;
 
-    color: ${({ theme }) => theme.colors.h1};
+    color: ${({ theme }) => theme.colors.text};
 
     small {
       margin-top: 8px;

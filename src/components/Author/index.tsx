@@ -34,6 +34,7 @@ const Author: React.FC = () => {
             href="https://github.com/xmatheus"
             target="_blank"
             title="github do autor"
+            rel="noreferrer"
           >
             <GitIcon alt="icone do github" />
           </a>
@@ -41,6 +42,7 @@ const Author: React.FC = () => {
             href="https://www.instagram.com/matheus.ftc/"
             target="_blank"
             title="instagram do autor"
+            rel="noreferrer"
           >
             <IgIcon alt="icone do instagram" />
           </a>
@@ -48,6 +50,7 @@ const Author: React.FC = () => {
             href="https://mail.google.com/mail/?view=cm&fs=1&to=matheuscorreia559@gmail.com&su=Olá Matheus :)&body=Cheguei aqui pelo blog"
             target="_blank"
             title="enviar um email para o autor"
+            rel="noreferrer"
           >
             <EmailIcon alt="icone de email" />
           </a>
