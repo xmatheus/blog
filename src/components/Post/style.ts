@@ -34,7 +34,7 @@ export const Container = styled.article`
     background-color: ${({ theme }) => theme.colors.primary};
   }
 
-  :hover .eye {
+  :hover svg {
     path {
       stroke: ${({ theme }) => theme.colors.primary};
     }

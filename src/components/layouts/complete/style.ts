@@ -29,6 +29,10 @@ export const Main = styled.main`
   width: 100%;
   min-height: 100vh;
   height: 100%;
+
+  @media screen and (max-width: 1200px) {
+    margin-bottom: 26px;
+  }
 `
 export const RightMenu = styled.aside`
   /* border-left: 1px solid ${props => props.theme.colors.divider}; */
@@ -41,15 +45,21 @@ export const RightMenu = styled.aside`
   top: 0;
   left: 0;
 
+  transition: all 0.2s ease-in-out;
+
   @media screen and (max-width: 1200px) {
     position: fixed;
-    transform: translateX(-110vw);
+    /* transform: translateX(-110vw); */
     margin: 0px auto;
     max-width: 100vw;
     width: 100vw;
-    height: 56px;
-    top: 100%;
-    transform: translateY(-100%);
+    height: 76px;
+    bottom: 0px;
+    right: 0;
+    left: 0;
+    top: unset;
+    /* top: 100%; */
+    /* transform: translateY(-100%); */
 
     background-color: ${({ theme }) => theme.colors.background};
     border-top: 0.5px solid ${({ theme }) => theme.colors.divider};

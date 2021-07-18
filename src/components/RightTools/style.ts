@@ -66,6 +66,11 @@ export const Button = styled.button`
 
   cursor: pointer;
 
+  @media screen and (max-width: 1200px) {
+    width: 48px;
+    height: 48px;
+  }
+
   path {
     stroke: ${({ theme }) => theme.colors.text};
   }

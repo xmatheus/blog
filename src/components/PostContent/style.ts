@@ -23,6 +23,11 @@ export const Title = styled.h1`
   margin-bottom: 16px;
 
   color: ${({ theme }) => theme.colors.text};
+
+  @media screen and (max-width: 1200px) {
+    font-size: 40px;
+    line-height: 50px;
+  }
 `
 
 export const Summary = styled.p`
@@ -32,6 +37,11 @@ export const Summary = styled.p`
   line-height: 36px;
 
   color: ${({ theme }) => theme.colors.subText};
+
+  @media screen and (max-width: 1200px) {
+    font-size: 24px;
+    line-height: 33px;
+  }
 `
 
 export const BackButton = styled.button`
@@ -62,6 +72,10 @@ export const BackButton = styled.button`
     path {
       stroke: ${({ theme }) => theme.colors.primary};
     }
+  }
+
+  @media screen and (max-width: 1200px) {
+    margin-top: 40px;
   }
 
   svg {
@@ -122,6 +136,10 @@ export const Content = styled.div`
   width: 100%;
   margin-top: 88px;
 
+  @media screen and (max-width: 1200px) {
+    padding-bottom: 76px;
+  }
+
   p {
     margin: 16px 0px;
     font-style: normal;
@@ -130,6 +148,11 @@ export const Content = styled.div`
     line-height: 33.6px;
 
     color: ${({ theme }) => theme.colors.textContent};
+
+    @media screen and (max-width: 1200px) {
+      font-size: 19px;
+      line-height: 30px;
+    }
   }
 
   blockquote,
@@ -158,6 +181,11 @@ export const Content = styled.div`
     font-size: 32px;
     line-height: 44.8px;
     color: ${({ theme }) => theme.colors.text};
+
+    @media screen and (max-width: 1200px) {
+      font-size: 28px;
+      line-height: 39px;
+    }
   }
 
   h3 {
@@ -166,6 +194,11 @@ export const Content = styled.div`
 
     font-size: 24px;
     line-height: 33px;
+
+    @media screen and (max-width: 1200px) {
+      font-size: 22px;
+      line-height: 30px;
+    }
   }
 
   pre {
@@ -199,6 +232,11 @@ export const Content = styled.div`
     p {
       font-size: 22px;
       color: ${({ theme }) => theme.colors.subText};
+
+      @media screen and (max-width: 1200px) {
+        font-size: 19px;
+        line-height: 30px;
+      }
     }
   }
 
