@@ -7,7 +7,9 @@ const dark = {
     divider: 'rgba(255, 255, 255, 0.1)',
     subText: 'rgba(255, 255, 255, 0.6)',
     subTextSub: 'rgba(255, 255, 255, 0.4)',
-    backgroundDiv: 'rgba(255, 255, 255, 0.07)'
+    backgroundDiv: 'rgba(255, 255, 255, 0.07)',
+    textContent: 'rgba(255, 255, 255, 0.70)',
+    bold: 'rgba(255, 255, 255, 1)'
   }
 }
 
@@ -20,7 +22,9 @@ export const white = {
     divider: 'rgba(11, 21, 50, 0.1)',
     subText: 'rgba(11, 21, 50, 0.6)',
     subTextSub: 'rgba(11, 21, 50, 0.4)',
-    backgroundDiv: 'rgba(11, 21, 50, 0.07)'
+    backgroundDiv: 'rgba(11, 21, 50, 0.07)',
+    textContent: 'rgba(11, 21, 50, 0.70)',
+    bold: 'rgba(11, 21, 50, 1)'
   }
 }
 

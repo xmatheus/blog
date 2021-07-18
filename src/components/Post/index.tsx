@@ -76,17 +76,17 @@ const Post: FC<PostProps> = ({ slug, title, summary, tags, time, content }) => {
   }, [theme])
 
   return (
-    <S.Container>
-      <S.Canvas ref={canvasRef}></S.Canvas>
-      <S.Divider id="divider" />
-      <S.TextContent>
-        <Link href={`/${slug}`}>
-          <a title={`Postagem ${title}`}>
+    <Link href={`/${slug}`}>
+      <S.MyA title={`Postagem ${title}`}>
+        <S.Container>
+          <S.Canvas ref={canvasRef}></S.Canvas>
+          <S.Divider id="divider" />
+          <S.TextContent>
             <S.TopText>
               <time>{time}</time>
 
               <S.WrapperTimeRead>
-                <Eye className="eye" />
+                <Eye />
                 {timeToRead(content)}
               </S.WrapperTimeRead>
             </S.TopText>
@@ -101,10 +101,10 @@ const Post: FC<PostProps> = ({ slug, title, summary, tags, time, content }) => {
                 <S.Tag key={slug + tag}>{`#${tag.trim()}`}</S.Tag>
               ))}
             </S.WrapperTags>
-          </a>
-        </Link>
-      </S.TextContent>
-    </S.Container>
+          </S.TextContent>
+        </S.Container>
+      </S.MyA>
+    </Link>
   )
 }
 

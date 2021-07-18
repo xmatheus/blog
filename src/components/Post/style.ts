@@ -1,5 +1,22 @@
 import styled from 'styled-components'
 
+export const MyA = styled.a`
+  text-decoration: none;
+  outline: none;
+
+  display: flex;
+
+  width: auto;
+
+  min-height: 143px;
+
+  width: 95%;
+  border-radius: 5px;
+  transition: all 0.2s ease-in-out;
+
+  cursor: pointer;
+`
+
 export const Container = styled.article`
   display: flex;
 
@@ -8,7 +25,7 @@ export const Container = styled.article`
   margin-bottom: 64px;
   min-height: 143px;
 
-  width: 90%;
+  width: 95%;
   border-radius: 5px;
   transition: all 0.2s ease-in-out;
 
@@ -45,9 +62,8 @@ export const TextContent = styled.div`
     color: ${({ theme }) => theme.colors.text};
   }
 
-  a {
-    text-decoration: none;
-    outline: none;
+  @media screen and (max-width: 1200px) {
+    margin-left: 0px;
   }
 `
 
@@ -58,6 +74,10 @@ export const Divider = styled.div`
   background-color: ${({ theme }) => theme.colors.divider};
 
   transition: all 0.2s ease-in-out;
+
+  @media screen and (max-width: 1200px) {
+    display: none;
+  }
 `
 
 export const Summary = styled.p`
@@ -82,6 +102,12 @@ export const Canvas = styled.canvas`
   image-rendering: pixelated;
   image-rendering: crisp-edges;
   image-rendering: -moz-crisp-edges;
+
+  @media screen and (max-width: 1200px) {
+    display: none;
+    width: 94px;
+    height: 94px;
+  }
 `
 
 export const TopText = styled.div`

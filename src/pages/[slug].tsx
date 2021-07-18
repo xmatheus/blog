@@ -1,4 +1,5 @@
 import { GetStaticProps } from 'next'
+import PostContent from 'src/components/PostContent'
 import { getPost, getAllPosts, Posts } from 'src/services/api'
 import markdown from 'src/services/markdown.js'
 
@@ -7,15 +8,7 @@ export interface IPosts {
 }
 
 const Page = ({ post }: IPosts): JSX.Element => {
-  return (
-    <>
-      <h1>{post.title}</h1>
-      <p>
-        {post.author} · {post.createdAt.formated}
-      </p>
-      <div dangerouslySetInnerHTML={{ __html: post.content }} />
-    </>
-  )
+  return <PostContent post={post} />
 }
 
 export default Page
@@ -29,10 +22,10 @@ export const getStaticProps: GetStaticProps = async ({
 }: GetStaticResponse) => {
   const post = getPost(params.slug, [
     'title',
-    'createdAt',
-    'author',
+    'summary',
     'slug',
-    'content'
+    'content',
+    'createdAt'
   ])
 
   post.content = await markdown.toHTML(post.content)

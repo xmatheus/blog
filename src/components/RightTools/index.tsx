@@ -23,27 +23,29 @@ const RightTools: FC = () => {
 
   return (
     <S.Container>
-      <S.TopButtonsWrapper>
-        <S.Button>
-          <SearchSVG />
-        </S.Button>
+      <S.Wrapper>
+        <S.TopButtonsWrapper>
+          <S.Button>
+            <SearchSVG />
+          </S.Button>
+
+          <S.Button
+            onClick={() => {
+              toggleTheme()
+            }}
+          >
+            {sun ? <SunSVG /> : <NightSVG />}
+          </S.Button>
+        </S.TopButtonsWrapper>
 
         <S.Button
           onClick={() => {
-            toggleTheme()
+            window.scrollTo(0, 0)
           }}
         >
-          {sun ? <SunSVG /> : <NightSVG />}
+          <ArrowSVG />
         </S.Button>
-      </S.TopButtonsWrapper>
-
-      <S.Button
-        onClick={() => {
-          window.scrollTo(0, 0)
-        }}
-      >
-        <ArrowSVG />
-      </S.Button>
+      </S.Wrapper>
     </S.Container>
   )
 }
