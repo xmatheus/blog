@@ -8,6 +8,8 @@ import LayoutComplete from 'src/components/layouts/complete/index'
 import { Page } from 'src/components/layouts/index'
 import { AppProps } from 'next/app'
 
+import './_app_dracula_highlight.css'
+
 type Props = AppProps & {
   Component: Page
 }
