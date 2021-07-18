@@ -4,8 +4,15 @@ export const Container = styled.section`
   width: 100vw;
   height: 100%;
   display: flex;
+  overflow-x: hidden;
+  transition: all 0.3s ease-in-out;
 `
-export const LeftMenu = styled.aside`
+
+interface BurgerMenu {
+  open: boolean
+}
+
+export const LeftMenu = styled.aside<BurgerMenu>`
   /* min-height: 100vh; */
   height: 100vh;
 
@@ -18,10 +25,30 @@ export const LeftMenu = styled.aside`
   left: 0;
 
   border-right: 1px solid ${props => props.theme.colors.divider};
+  background-color: ${({ theme }) => theme.colors.background};
+
+  transition: all 0.3s ease-in-out;
 
   @media screen and (max-width: 1200px) {
     position: absolute;
     transform: translateX(-110vw);
+
+    ${({ open }) =>
+      open &&
+      `
+      max-width: unset;
+      width:100vw;
+      z-index:2;
+      position: fixed;
+      transform: translateX(0);
+    `}/*
+    position: fixed;
+    top: 0;
+    left:0;
+    right: 0;
+
+    width: 100vw;
+    height: 76px; */
   }
 `
 
@@ -48,6 +75,7 @@ export const RightMenu = styled.aside`
   transition: all 0.2s ease-in-out;
 
   @media screen and (max-width: 1200px) {
+    z-index: 10;
     position: fixed;
     /* transform: translateX(-110vw); */
     margin: 0px auto;

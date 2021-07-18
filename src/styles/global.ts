@@ -12,7 +12,8 @@ export default createGlobalStyle`
     background: ${props => props.theme.colors.background};
     color: ${props => props.theme.colors.text};
     font: 400 16px Inter, sans-serif;
-    overflow-x:hidden;
+    overflow-x: hidden;
+
   }
 
     /* width */

@@ -1,4 +1,4 @@
-import React, { createContext, useCallback, useContext, useState } from 'react'
+import { FC, createContext, useCallback, useContext, useState } from 'react'
 import { ThemeProvider } from 'styled-components'
 import dark, { white } from 'src/styles/theme'
 
@@ -11,9 +11,9 @@ interface ThemeContextData {
 
 const ThemeContext = createContext<ThemeContextData>({} as ThemeContextData)
 
-export const useTheme = () => useContext(ThemeContext)
+export const useTheme = (): ThemeContextData => useContext(ThemeContext)
 
-export const CustomThemeProvider: React.FC = ({ children }) => {
+export const CustomThemeProvider: FC = ({ children }) => {
   const [theme, setTheme] = useState<Theme>(dark)
 
   const toggleTheme = useCallback(() => {

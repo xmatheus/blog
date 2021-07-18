@@ -5,7 +5,6 @@ import * as S from './style'
 import EmailIcon from 'src/assets/email.svg'
 import GitIcon from 'src/assets/git.svg'
 import IgIcon from 'src/assets/ig.svg'
-// const CloseSVG = () => <svg>{/* ... */}</svg>
 
 const Author: React.FC = () => {
   return (

@@ -1,12 +1,12 @@
 import { FC } from 'react'
-// import { ThemeProvider } from 'styled-components'
+import { AppProps } from 'next/app'
 import { CustomThemeProvider } from 'src/context/theme'
 
 import GlobalStyle from '../styles/global'
 import LayoutComplete from 'src/components/layouts/complete/index'
 
 import { Page } from 'src/components/layouts/index'
-import { AppProps } from 'next/app'
+import BurgerProvider from 'src/context/burger'
 
 import './_app_dracula_highlight.css'
 
@@ -19,10 +19,12 @@ const MyApp: FC<Props> = ({ Component, pageProps }) => {
   // const Layout = Component.Layout || (children => <>{children}</>)
   return (
     <CustomThemeProvider>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-      <GlobalStyle />
+      <BurgerProvider>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+        <GlobalStyle />
+      </BurgerProvider>
     </CustomThemeProvider>
   )
 }

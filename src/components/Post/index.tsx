@@ -77,9 +77,12 @@ const Post: FC<PostProps> = ({ slug, title, summary, tags, time, content }) => {
 
   return (
     <Link href={`/${slug}`}>
-      <S.MyA title={`Postagem ${title}`}>
+      <S.MyA title={`Postagem: ${title}`}>
         <S.Container>
-          <S.Canvas ref={canvasRef}></S.Canvas>
+          <S.Canvas
+            ref={canvasRef}
+            title="Imagem gerada com base no titulo"
+          ></S.Canvas>
           <S.Divider id="divider" />
           <S.TextContent>
             <S.TopText>

@@ -4,14 +4,16 @@ import { ThemeContext } from 'styled-components'
 import { useTheme } from 'src/context/theme'
 import * as S from './style'
 import SunSVG from 'src/assets/sun.svg'
-import SearchSVG from 'src/assets/search.svg'
+// import SearchSVG from 'src/assets/search.svg'
 import NightSVG from 'src/assets/night.svg'
 import ArrowSVG from 'src/assets/top.svg'
+import { useBurger } from 'src/context/burger'
 
 const RightTools: FC = () => {
   const { toggleTheme } = useTheme()
   const theme = useContext(ThemeContext)
   const [sun, setSun] = useState(false)
+  const { openBurger, setBurger } = useBurger()
 
   useEffect(() => {
     if (theme.name === 'dark') {
@@ -26,7 +28,15 @@ const RightTools: FC = () => {
       <S.Wrapper>
         <S.TopButtonsWrapper>
           <S.Button>
-            <SearchSVG />
+            {/* <SearchSVG /> */}
+            <S.BurgerMenu
+              onClick={() => {
+                setBurger(!openBurger)
+              }}
+            >
+              <input type="checkbox" name="" id="burger-check" />
+              <span></span>
+            </S.BurgerMenu>
           </S.Button>
 
           <S.Button
