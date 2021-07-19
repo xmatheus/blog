@@ -4,7 +4,6 @@ export const Container = styled.section`
   width: 100vw;
   height: 100%;
   display: flex;
-  overflow-x: hidden;
   transition: all 0.3s ease-in-out;
 `
 
@@ -27,19 +26,18 @@ export const LeftMenu = styled.aside<BurgerMenu>`
   border-right: 1px solid ${props => props.theme.colors.divider};
   background-color: ${({ theme }) => theme.colors.background};
 
-  transition: all 0.3s ease-in-out;
+  transition: transform 0.4s ease-in-out, width 1s ease, max-width 1s ease;
 
   @media screen and (max-width: 1200px) {
-    position: absolute;
+    position: fixed;
     transform: translateX(-110vw);
 
     ${({ open }) =>
       open &&
       `
-      max-width: unset;
+      max-width: 100vw;
       width:100vw;
       z-index:2;
-      position: fixed;
       transform: translateX(0);
     `}/*
     position: fixed;

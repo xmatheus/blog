@@ -4,6 +4,10 @@ export const Wrapper = styled.section`
   margin: 0px auto;
   max-width: 988px;
   width: 96%;
+
+  @media screen and (max-width: 1200px) {
+    max-width: unset;
+  }
 `
 
 export const Header = styled.header`
@@ -275,6 +279,27 @@ export const Content = styled.div`
           border-bottom: none;
         }
       }
+    }
+  }
+
+  ul,
+  ol {
+    margin: 32px 0px;
+    margin-left: 72px;
+  }
+
+  li {
+    margin: 16px 0px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 33.6px;
+
+    color: ${({ theme }) => theme.colors.textContent};
+
+    @media screen and (max-width: 1200px) {
+      font-size: 19px;
+      line-height: 30px;
     }
   }
 `

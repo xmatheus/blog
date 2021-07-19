@@ -48,6 +48,15 @@ export const TopButtonsWrapper = styled.div`
       margin-right: 40px;
     }
   }
+
+  @media screen and (min-width: 1200px) {
+    button:first-of-type {
+      display: none;
+    }
+    button:nth-of-type(2) {
+      margin-top: 0px;
+    }
+  }
 `
 
 export const Button = styled.button`
@@ -86,7 +95,7 @@ export const Button = styled.button`
   }
 
   :last-of-type {
-    margin-bottom: 40px;
+    margin-bottom: 23px;
 
     @media screen and (max-width: 1200px) {
       margin-bottom: 0px;
