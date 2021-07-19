@@ -1,4 +1,4 @@
-import { FC, useEffect } from 'react'
+import { FC } from 'react'
 import { AppProps } from 'next/app'
 
 import * as S from './style'
@@ -8,10 +8,6 @@ import { useBurger } from 'src/context/burger'
 
 const completePage: FC<AppProps> = ({ children }) => {
   const { openBurger } = useBurger()
-
-  useEffect(() => {
-    console.log(openBurger)
-  }, [openBurger])
 
   return (
     <S.Container>
