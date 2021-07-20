@@ -62,7 +62,8 @@ export const TextContent = styled.div`
     color: ${({ theme }) => theme.colors.text};
   }
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: ${({ theme: { breakpoints } }) =>
+      breakpoints.xl}) {
     margin-left: 0px;
   }
 `
@@ -75,7 +76,8 @@ export const Divider = styled.div`
 
   transition: all 0.2s ease-in-out;
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: ${({ theme: { breakpoints } }) =>
+      breakpoints.xl}) {
     display: none;
   }
 `
@@ -103,7 +105,8 @@ export const Canvas = styled.canvas`
   image-rendering: crisp-edges;
   image-rendering: -moz-crisp-edges;
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: ${({ theme: { breakpoints } }) =>
+      breakpoints.xl}) {
     display: none;
     width: 94px;
     height: 94px;

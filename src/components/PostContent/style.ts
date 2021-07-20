@@ -5,7 +5,8 @@ export const Wrapper = styled.section`
   max-width: 988px;
   width: 96%;
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: ${({ theme: { breakpoints } }) =>
+      breakpoints.xl}) {
     max-width: unset;
   }
 `
@@ -28,7 +29,8 @@ export const Title = styled.h1`
 
   color: ${({ theme }) => theme.colors.text};
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: ${({ theme: { breakpoints } }) =>
+      breakpoints.xl}) {
     font-size: 40px;
     line-height: 50px;
   }
@@ -42,7 +44,8 @@ export const Summary = styled.p`
 
   color: ${({ theme }) => theme.colors.subText};
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: ${({ theme: { breakpoints } }) =>
+      breakpoints.xl}) {
     font-size: 24px;
     line-height: 33px;
   }
@@ -78,7 +81,8 @@ export const BackButton = styled.button`
     }
   }
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: ${({ theme: { breakpoints } }) =>
+      breakpoints.xl}) {
     margin-top: 40px;
   }
 
@@ -140,7 +144,8 @@ export const Content = styled.div`
   width: 100%;
   margin-top: 88px;
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: ${({ theme: { breakpoints } }) =>
+      breakpoints.xl}) {
     padding-bottom: 76px;
   }
 
@@ -153,7 +158,8 @@ export const Content = styled.div`
 
     color: ${({ theme }) => theme.colors.textContent};
 
-    @media screen and (max-width: 1200px) {
+    @media screen and (max-width: ${({ theme: { breakpoints } }) =>
+        breakpoints.xl}) {
       font-size: 19px;
       line-height: 30px;
     }
@@ -186,7 +192,8 @@ export const Content = styled.div`
     line-height: 44.8px;
     color: ${({ theme }) => theme.colors.text};
 
-    @media screen and (max-width: 1200px) {
+    @media screen and (max-width: ${({ theme: { breakpoints } }) =>
+        breakpoints.xl}) {
       font-size: 28px;
       line-height: 39px;
     }
@@ -199,7 +206,8 @@ export const Content = styled.div`
     font-size: 24px;
     line-height: 33px;
 
-    @media screen and (max-width: 1200px) {
+    @media screen and (max-width: ${({ theme: { breakpoints } }) =>
+        breakpoints.xl}) {
       font-size: 22px;
       line-height: 30px;
     }
@@ -237,7 +245,8 @@ export const Content = styled.div`
       font-size: 22px;
       color: ${({ theme }) => theme.colors.subText};
 
-      @media screen and (max-width: 1200px) {
+      @media screen and (max-width: ${({ theme: { breakpoints } }) =>
+          breakpoints.xl}) {
         font-size: 19px;
         line-height: 30px;
       }
@@ -297,7 +306,8 @@ export const Content = styled.div`
 
     color: ${({ theme }) => theme.colors.textContent};
 
-    @media screen and (max-width: 1200px) {
+    @media screen and (max-width: ${({ theme: { breakpoints } }) =>
+        breakpoints.xl}) {
       font-size: 19px;
       line-height: 30px;
     }

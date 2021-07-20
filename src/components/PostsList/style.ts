@@ -6,7 +6,8 @@ export const Container = styled.div`
   /* width: 100%; */
   /* height: 100%; */
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: ${({ theme: { breakpoints } }) =>
+      breakpoints.xl}) {
     display: flex;
     flex-direction: column;
     align-items: center;

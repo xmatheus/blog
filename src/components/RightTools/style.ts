@@ -9,7 +9,8 @@ export const Container = styled.div`
   height: 100%;
   width: 100%;
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: ${({ theme: { breakpoints } }) =>
+      breakpoints.xl}) {
     flex-direction: row;
     align-items: center;
     justify-content: center;
@@ -24,7 +25,8 @@ export const Wrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: ${({ theme: { breakpoints } }) =>
+      breakpoints.xl}) {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -37,7 +39,8 @@ export const Wrapper = styled.div`
 export const TopButtonsWrapper = styled.div`
   margin-top: 23px;
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: ${({ theme: { breakpoints } }) =>
+      breakpoints.xl}) {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -49,7 +52,8 @@ export const TopButtonsWrapper = styled.div`
     }
   }
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: ${({ theme: { breakpoints } }) =>
+      breakpoints.xl}) {
     button:first-of-type {
       display: none;
     }
@@ -77,7 +81,8 @@ export const Button = styled.button`
 
   cursor: pointer;
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: ${({ theme: { breakpoints } }) =>
+      breakpoints.xl}) {
     width: 48px;
     height: 48px;
   }
@@ -89,7 +94,8 @@ export const Button = styled.button`
   :nth-of-type(2) {
     margin-top: 16px;
 
-    @media screen and (max-width: 1200px) {
+    @media screen and (max-width: ${({ theme: { breakpoints } }) =>
+        breakpoints.xl}) {
       margin-top: 0px;
     }
   }
@@ -97,7 +103,8 @@ export const Button = styled.button`
   :last-of-type {
     margin-bottom: 23px;
 
-    @media screen and (max-width: 1200px) {
+    @media screen and (max-width: ${({ theme: { breakpoints } }) =>
+        breakpoints.xl}) {
       margin-bottom: 0px;
     }
   }

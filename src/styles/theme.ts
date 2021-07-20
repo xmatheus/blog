@@ -1,3 +1,11 @@
+const breakpoints = {
+  xs: '0px',
+  sm: '576px',
+  md: '768px',
+  lg: '992px',
+  xl: '1200px'
+}
+
 const dark = {
   name: 'dark',
   colors: {
@@ -10,7 +18,8 @@ const dark = {
     backgroundDiv: 'rgba(255, 255, 255, 0.07)',
     textContent: 'rgba(255, 255, 255, 0.70)',
     bold: 'rgba(255, 255, 255, 1)'
-  }
+  },
+  breakpoints
 }
 
 export const white = {
@@ -25,7 +34,8 @@ export const white = {
     backgroundDiv: 'rgba(11, 21, 50, 0.07)',
     textContent: 'rgba(11, 21, 50, 0.70)',
     bold: 'rgba(11, 21, 50, 1)'
-  }
+  },
+  breakpoints
 }
 
 export default dark

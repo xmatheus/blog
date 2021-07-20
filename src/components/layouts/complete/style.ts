@@ -28,7 +28,8 @@ export const LeftMenu = styled.aside<BurgerMenu>`
 
   transition: transform 0.4s ease-in-out, width 1s ease, max-width 1s ease;
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: ${({ theme: { breakpoints } }) =>
+      breakpoints.xl}) {
     position: fixed;
     transform: translateX(-110vw);
 
@@ -39,14 +40,7 @@ export const LeftMenu = styled.aside<BurgerMenu>`
       width:100vw;
       z-index:2;
       transform: translateX(0);
-    `}/*
-    position: fixed;
-    top: 0;
-    left:0;
-    right: 0;
-
-    width: 100vw;
-    height: 76px; */
+    `}
   }
 `
 
@@ -55,7 +49,8 @@ export const Main = styled.main`
   min-height: 100vh;
   height: 100%;
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: ${({ theme: { breakpoints } }) =>
+      breakpoints.xl}) {
     margin-bottom: 26px;
   }
 `
@@ -72,7 +67,8 @@ export const RightMenu = styled.aside`
 
   transition: all 0.2s ease-in-out;
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: ${({ theme: { breakpoints } }) =>
+      breakpoints.xl}) {
     z-index: 10;
     position: fixed;
     /* transform: translateX(-110vw); */
