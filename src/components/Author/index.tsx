@@ -19,7 +19,7 @@ const Author: React.FC = () => {
           ></Image>
 
           <h1>
-            Matheus Felipe <small>programa dor</small>
+            Matheus Felipe <small>programador</small>
           </h1>
         </S.ImageAndUserName>
 

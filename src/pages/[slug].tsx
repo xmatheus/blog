@@ -1,5 +1,8 @@
 import { GetStaticProps } from 'next'
+import Head from 'next/head'
+
 import PostContent from 'src/components/PostContent'
+import { generatePostSchema } from 'src/services/seo'
 import { getPost, getAllPosts, Posts } from 'src/services/api'
 import markdown from 'src/services/markdown.js'
 
@@ -8,7 +11,21 @@ export interface IPosts {
 }
 
 const Page = ({ post }: IPosts): JSX.Element => {
-  return <PostContent post={post} />
+  const schema = generatePostSchema(post)
+
+  return (
+    <>
+      <Head>
+        <title>{post.title} · Blog do Matheus</title>
+        <meta name="description" content={post.summary} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      </Head>
+      <PostContent post={post} />
+    </>
+  )
 }
 
 export default Page

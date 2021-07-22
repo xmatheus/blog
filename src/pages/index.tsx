@@ -1,9 +1,10 @@
 import { FC } from 'react'
+import { GetStaticPropsResult } from 'next'
+import Head from 'next/head'
+
 import { getAllPosts, Posts } from 'src/services/api'
 import LayoutComplete from 'src/components/layouts/complete'
-// import { AppProps } from 'next/app'
 import { Page as PageWithMainLayoutType } from 'src/components/layouts'
-import { GetStaticPropsResult } from 'next'
 import PostsList from 'src/components/PostsList'
 import PostComponent from 'src/components/Post'
 
@@ -13,19 +14,28 @@ export interface IPosts {
 
 const Page: FC<IPosts> = ({ posts }) => {
   return (
-    <PostsList>
-      {posts?.map(post => (
-        <PostComponent
-          key={post.createdAt.iso}
-          time={post.createdAt.formated}
-          slug={post.slug}
-          title={post.title}
-          summary={post.summary}
-          tags={post.tags}
-          content={post.content}
-        ></PostComponent>
-      ))}
-    </PostsList>
+    <>
+      <Head>
+        <title>Blog do Matheus · Tecnologia - CComp - Javascript</title>
+        <meta
+          name="description"
+          content="Um blog com conteúdo de tecnologia, javascript, Ciência da Computação e o que der na minha cabeça :)"
+        />
+      </Head>
+      <PostsList>
+        {posts.map(post => (
+          <PostComponent
+            key={post.createdAt.iso}
+            time={post.createdAt.formated}
+            slug={post.slug}
+            title={post.title}
+            summary={post.summary}
+            tags={post.tags}
+            content={post.content}
+          ></PostComponent>
+        ))}
+      </PostsList>
+    </>
   )
 }
 ;(Page as PageWithMainLayoutType).Layout = LayoutComplete
