@@ -36,7 +36,6 @@ export function getPost(slugOrFilename: string, fields: Fields): Posts {
     if (data[field]) post[field] = data[field]
   })
 
-  console.log(post)
   return post
 }
 
