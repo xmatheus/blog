@@ -143,6 +143,7 @@ export const WrapperTimeRead = styled.div`
 export const Content = styled.div`
   width: 100%;
   margin-top: 88px;
+  margin-bottom: 32px;
 
   @media screen and (max-width: ${({ theme: { breakpoints } }) =>
       breakpoints.xl}) {

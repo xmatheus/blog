@@ -68,7 +68,6 @@ export const Button = styled.button`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* padding: 8px 10px; */
 
   width: 36px;
   height: 35px;
@@ -81,6 +80,13 @@ export const Button = styled.button`
 
   cursor: pointer;
 
+  transition: filter 0.4s ease-in-out, transform 0.2s ease-in-out;
+
+  :hover {
+    filter: brightness(0.8);
+    transform: translateY(-1px);
+  }
+
   @media screen and (max-width: ${({ theme: { breakpoints } }) =>
       breakpoints.xl}) {
     width: 48px;
@@ -88,6 +94,7 @@ export const Button = styled.button`
   }
 
   path {
+    transition: stroke 0.4s ease-in-out;
     stroke: ${({ theme }) => theme.colors.text};
   }
 
