@@ -92,7 +92,6 @@ export const BackButton = styled.button`
   }
 
   path {
-    transition: all 0.3s ease-in-out;
     stroke: ${({ theme }) => theme.colors.text};
   }
 
@@ -103,8 +102,6 @@ export const BackButton = styled.button`
     line-height: 17px;
     margin-left: ${({ theme }) => theme.spacing.xsmall};
     color: ${({ theme }) => theme.colors.text};
-
-    transition: all 0.3s ease-in-out;
   }
 `
 export const BellowText = styled.div`
@@ -136,7 +133,6 @@ export const WrapperTimeRead = styled.div`
 
     path {
       stroke: ${({ theme }) => theme.colors.subText};
-      transition: all 0.4s ease-in-out;
     }
   }
 `

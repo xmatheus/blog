@@ -69,7 +69,6 @@ export const WrapperIcons = styled.div`
 
   path {
     stroke: ${({ theme }) => theme.colors.subText};
-    transition: all 0.4s ease-in-out;
   }
 
   a {

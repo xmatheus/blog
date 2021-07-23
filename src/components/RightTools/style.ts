@@ -162,10 +162,9 @@ export const BurgerMenu = styled.div`
     height: 2px;
     border-radius: 5px;
     background-color: ${({ theme }) => theme.colors.text};
-    /* margin-bottom: 4px; */
     position: relative;
 
-    transition: all 0.2s ease-in-out;
+    transition: background 0.2s ease-in-out;
 
     :after,
     :before {

@@ -12,7 +12,6 @@ export const MyA = styled.a`
 
   width: 95%;
   border-radius: 5px;
-  transition: all 0.2s ease-in-out;
 
   cursor: pointer;
 `
@@ -27,7 +26,6 @@ export const Container = styled.article`
 
   width: 95%;
   border-radius: 5px;
-  transition: all 0.2s ease-in-out;
 
   :hover #divider {
     width: 1px;
@@ -73,8 +71,6 @@ export const Divider = styled.div`
   width: 1px;
 
   background-color: ${({ theme }) => theme.colors.divider};
-
-  transition: all 0.2s ease-in-out;
 
   @media screen and (max-width: ${({ theme: { breakpoints } }) =>
       breakpoints.xl}) {
@@ -140,7 +136,6 @@ export const WrapperTimeRead = styled.div`
 
     path {
       stroke: ${({ theme }) => theme.colors.subText};
-      transition: all 0.4s ease-in-out;
     }
   }
 `
