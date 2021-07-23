@@ -21,33 +21,33 @@ export const Header = styled.header`
 export const Title = styled.h1`
   font-style: normal;
   font-weight: bold;
-  font-size: 48px;
-  line-height: 56px;
+  font-size: ${({ theme }) => theme.font.mxxlarge.size};
+  line-height: ${({ theme }) => theme.font.mxxlarge.lineHeight};
   letter-spacing: 0.02em;
 
-  margin-bottom: 16px;
+  margin-bottom: ${({ theme }) => theme.spacing.xsmall};
 
   color: ${({ theme }) => theme.colors.text};
 
   @media screen and (max-width: ${({ theme: { breakpoints } }) =>
       breakpoints.xl}) {
-    font-size: 40px;
-    line-height: 50px;
+    font-size: ${({ theme }) => theme.font.mxlarge.size};
+    line-height: ${({ theme }) => theme.font.mxlarge.lineHeight};
   }
 `
 
 export const Summary = styled.p`
   font-style: normal;
   font-weight: normal;
-  font-size: 26px;
-  line-height: 36px;
+  font-size: ${({ theme }) => theme.font.xlarge.size};
+  line-height: ${({ theme }) => theme.font.defaultLineHeight};
 
   color: ${({ theme }) => theme.colors.subText};
 
   @media screen and (max-width: ${({ theme: { breakpoints } }) =>
       breakpoints.xl}) {
-    font-size: 24px;
-    line-height: 33px;
+    font-size: ${({ theme }) => theme.font.large.size};
+    line-height: ${({ theme }) => theme.font.defaultLineHeight};
   }
 `
 
@@ -58,7 +58,7 @@ export const BackButton = styled.button`
   margin: 0px;
   border-radius: 5px;
 
-  margin-top: 56px;
+  margin-top: ${({ theme }) => theme.spacing.xxlarge};
   margin-bottom: 48px;
 
   width: 133px;
@@ -99,9 +99,9 @@ export const BackButton = styled.button`
   p {
     font-family: 'Inter';
     font-weight: 500;
-    font-size: 14px;
+    font-size: ${({ theme }) => theme.font.xxsmall.size};
     line-height: 17px;
-    margin-left: 16px;
+    margin-left: ${({ theme }) => theme.spacing.xsmall};
     color: ${({ theme }) => theme.colors.text};
 
     transition: all 0.3s ease-in-out;
@@ -115,7 +115,7 @@ export const BellowText = styled.div`
 
   font-style: normal;
   font-weight: normal;
-  font-size: 14px;
+  font-size: ${({ theme }) => theme.font.xxsmall.size};
   line-height: 17px;
 
   color: ${({ theme }) => theme.colors.subText};
@@ -142,27 +142,27 @@ export const WrapperTimeRead = styled.div`
 `
 export const Content = styled.div`
   width: 100%;
-  margin-top: 88px;
-  margin-bottom: 32px;
+  margin-top: ${({ theme }) => theme.spacing.xxxlarge};
+  margin-bottom: ${({ theme }) => theme.spacing.medium};
 
   @media screen and (max-width: ${({ theme: { breakpoints } }) =>
       breakpoints.xl}) {
-    padding-bottom: 76px;
+    padding-bottom: ${({ theme }) => theme.spacing.mxlarge};
   }
 
   p {
-    margin: 16px 0px;
+    margin: ${({ theme }) => theme.spacing.xsmall} 0px;
     font-style: normal;
     font-weight: normal;
-    font-size: 22px;
+    font-size: ${({ theme }) => theme.font.medium.size};
     line-height: 33.6px;
 
     color: ${({ theme }) => theme.colors.textContent};
 
     @media screen and (max-width: ${({ theme: { breakpoints } }) =>
         breakpoints.xl}) {
-      font-size: 19px;
-      line-height: 30px;
+      font-size: ${({ theme }) => theme.font.small.size};
+      line-height: ${({ theme }) => theme.font.small.line};
     }
   }
 
@@ -184,34 +184,41 @@ export const Content = styled.div`
   }
 
   h2 {
-    margin-top: 56px;
-    margin-bottom: 24px;
+    margin-top: ${({ theme }) => theme.spacing.xxlarge};
+    margin-bottom: ${({ theme }) => theme.spacing.small};
 
     font-style: normal;
     font-weight: bold;
-    font-size: 32px;
-    line-height: 44.8px;
+    font-size: ${({ theme }) => theme.font.mlarge.size};
+    line-height: ${({ theme }) => theme.font.defaultLineHeight};
     color: ${({ theme }) => theme.colors.text};
 
     @media screen and (max-width: ${({ theme: { breakpoints } }) =>
         breakpoints.xl}) {
-      font-size: 28px;
-      line-height: 39px;
+      font-size: ${({ theme }) => theme.font.xxlarge.size};
     }
   }
 
   h3 {
-    margin-top: 24px;
-    margin-bottom: 16px;
+    margin-top: ${({ theme }) => theme.spacing.small};
+    margin-bottom: ${({ theme }) => theme.spacing.xsmall};
 
-    font-size: 24px;
-    line-height: 33px;
+    font-size: ${({ theme }) => theme.font.large.size};
+    line-height: ${({ theme }) => theme.font.defaultLineHeight};
 
     @media screen and (max-width: ${({ theme: { breakpoints } }) =>
         breakpoints.xl}) {
-      font-size: 22px;
+      font-size: ${({ theme }) => theme.font.medium.size};
       line-height: 30px;
     }
+  }
+
+  h4 {
+    margin-top: ${({ theme }) => theme.spacing.small};
+    margin-bottom: ${({ theme }) => theme.spacing.xsmall};
+
+    font-size: ${({ theme }) => theme.font.medium.size};
+    line-height: 30px;
   }
 
   pre {
@@ -243,19 +250,19 @@ export const Content = styled.div`
     background-color: ${({ theme }) => theme.colors.backgroundDiv};
 
     p {
-      font-size: 22px;
+      font-size: ${({ theme }) => theme.font.medium.size};
       color: ${({ theme }) => theme.colors.subText};
 
       @media screen and (max-width: ${({ theme: { breakpoints } }) =>
           breakpoints.xl}) {
-        font-size: 19px;
-        line-height: 30px;
+        font-size: ${({ theme }) => theme.font.small.size};
+        line-height: ${({ theme }) => theme.font.small.line};
       }
     }
   }
 
   table {
-    margin-top: 16px;
+    margin-top: ${({ theme }) => theme.spacing.xsmall};
 
     width: 100%;
     border: 0.5px solid ${({ theme }) => theme.colors.divider};
@@ -299,18 +306,18 @@ export const Content = styled.div`
   }
 
   li {
-    margin: 16px 0px;
+    margin: ${({ theme }) => theme.spacing.xsmall} 0px;
     font-style: normal;
     font-weight: normal;
-    font-size: 22px;
-    line-height: 33.6px;
+    font-size: ${({ theme }) => theme.font.medium.size};
+    line-height: ${({ theme }) => theme.font.defaultLineHeight};
 
     color: ${({ theme }) => theme.colors.textContent};
 
     @media screen and (max-width: ${({ theme: { breakpoints } }) =>
         breakpoints.xl}) {
-      font-size: 19px;
-      line-height: 30px;
+      font-size: ${({ theme }) => theme.font.small.size};
+      line-height: ${({ theme }) => theme.font.small.line};
     }
   }
 `

@@ -50,14 +50,14 @@ export const TextContent = styled.div`
   flex-direction: column;
 
   height: 100%;
-  margin-left: 16px;
+  margin-left: ${({ theme }) => theme.spacing.xsmall};
 
   h2 {
-    margin-top: 16px;
+    margin-top: ${({ theme }) => theme.spacing.xsmall};
     font-style: normal;
     font-weight: bold;
-    font-size: 26px;
-    line-height: 31px;
+    font-size: ${({ theme }) => theme.font.xlarge};
+    line-height: ${({ theme }) => theme.font.defaultLineHeight};
 
     color: ${({ theme }) => theme.colors.text};
   }
@@ -86,8 +86,8 @@ export const Summary = styled.p`
   margin-top: 8px;
   font-style: normal;
   font-weight: normal;
-  font-size: 18px;
-  line-height: 22px;
+  font-size: ${({ theme }) => theme.font.small.size};
+  line-height: ${({ theme }) => theme.font.defaultLineHeight};
 
   text-decoration: none;
 
@@ -99,7 +99,7 @@ export const Canvas = styled.canvas`
   height: 143px;
 
   background-color: ${({ theme }) => theme.colors.background};
-  margin-right: 16px;
+  margin-right: ${({ theme }) => theme.spacing.xsmall};
 
   image-rendering: pixelated;
   image-rendering: crisp-edges;
@@ -121,7 +121,7 @@ export const TopText = styled.div`
 
   font-style: normal;
   font-weight: normal;
-  font-size: 14px;
+  font-size: ${({ theme }) => theme.font.xxsmall.size};
   line-height: 17px;
 
   color: ${({ theme }) => theme.colors.subText};
@@ -150,10 +150,9 @@ export const WrapperTags = styled.div`
 `
 
 export const Tag = styled.p`
-  margin-right: 16px;
+  margin-right: ${({ theme }) => theme.spacing.xsmall};
 
-  font-size: 16px;
-  line-height: 19px;
+  font-size: ${({ theme }) => theme.font.xsmall};
 
   color: ${({ theme }) => theme.colors.primary};
 `

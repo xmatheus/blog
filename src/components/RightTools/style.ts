@@ -99,7 +99,7 @@ export const Button = styled.button`
   }
 
   :nth-of-type(2) {
-    margin-top: 16px;
+    margin-top: ${({ theme }) => theme.spacing.xsmall};
 
     @media screen and (max-width: ${({ theme: { breakpoints } }) =>
         breakpoints.xl}) {
