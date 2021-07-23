@@ -1,10 +1,39 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
+
+const fadeIn = keyframes`
+  0% {
+    opacity: 0;
+    position: fixed;
+    max-width: 100vw;
+    width: 100vw;
+    height: 76px;
+    bottom: -76px;
+
+    /* transform: translateX(80px); */
+  }
+
+  100% {
+    left: 0;
+    position: fixed;
+    z-index: 10;
+    /* position: fixed; */
+    margin: 0px auto;
+    max-width: 100vw;
+    width: 100vw;
+    height: 76px;
+    bottom: 0px;
+    right: 0;
+    top: unset;
+    opacity: 1;
+
+  }
+`
 
 export const Container = styled.section`
   width: 100vw;
   height: 100%;
   display: flex;
-  transition: all 0.3s ease-in-out;
+  transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
 `
 
 interface BurgerMenu {
@@ -65,23 +94,14 @@ export const RightMenu = styled.aside`
   top: 0;
   left: 0;
 
-  transition: all 0.2s ease-in-out;
+  transition: max-width 0.2s ease-in-out, height 0.2s ease-in-out,
+    width 0.2s ease-in-out;
 
   @media screen and (max-width: ${({ theme: { breakpoints } }) =>
       breakpoints.xl}) {
-    z-index: 10;
-    position: fixed;
-    /* transform: translateX(-110vw); */
-    margin: 0px auto;
-    max-width: 100vw;
-    width: 100vw;
-    height: 76px;
-    bottom: 0px;
-    right: 0;
-    left: 0;
-    top: unset;
-    /* top: 100%; */
-    /* transform: translateY(-100%); */
+    animation-name: ${fadeIn};
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
 
     background-color: ${({ theme }) => theme.colors.background};
     border-top: 0.5px solid ${({ theme }) => theme.colors.divider};
