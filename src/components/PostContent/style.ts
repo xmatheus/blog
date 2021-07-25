@@ -306,7 +306,7 @@ export const Content = styled.div`
   ul,
   ol {
     margin: 32px 0px;
-    margin-left: 72px;
+    margin-left: 40px;
   }
 
   li {

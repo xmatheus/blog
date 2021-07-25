@@ -25,8 +25,8 @@ export const Container = styled.div`
     cursor: pointer;
     margin-bottom: 64px;
 
-    :focus {
-      outline: -webkit-focus-ring-color auto 5px;
+    :focus-visible {
+      outline: -webkit-focus-ring-color auto 1px;
     }
   }
 `

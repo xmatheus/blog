@@ -73,6 +73,7 @@ export const LeftMenu = styled.aside<BurgerMenu>`
     ${({ open }) =>
       open &&
       `
+      visibility: unset;
       max-width: 100vw;
       width:100vw;
       z-index:2;
