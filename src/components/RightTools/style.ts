@@ -87,6 +87,10 @@ export const Button = styled.button`
     transform: translateY(-1px);
   }
 
+  :focus {
+    border: 1px solid ${({ theme }) => theme.colors.text};
+  }
+
   @media screen and (max-width: ${({ theme: { breakpoints } }) =>
       breakpoints.xl}) {
     width: 48px;

@@ -15,7 +15,7 @@ const Author: React.FC = () => {
             src={'/mf.jpg'}
             width={51}
             height={51}
-            alt="Imagem do autor do blog"
+            alt=" Imagem preto e branca do autor do blog. Estou com os braços em cima de uma mesa e olhando para a camera que está do meu lado esquerdo"
           ></Image>
 
           <h1>

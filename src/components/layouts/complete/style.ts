@@ -1,31 +1,38 @@
 import styled, { keyframes } from 'styled-components'
 
-const fadeIn = keyframes`
+const fadeOut = keyframes`
   0% {
+    visibility:hidden;
+    opacity: 0;
+    position: fixed;
+
+  }
+
+  20%{
+    visibility:hidden;
     opacity: 0;
     position: fixed;
     max-width: 100vw;
     width: 100vw;
     height: 76px;
+    left: 0;
     bottom: -76px;
-
-    /* transform: translateX(80px); */
   }
 
   100% {
-    left: 0;
     position: fixed;
     z-index: 10;
-    /* position: fixed; */
+    visibility:visible;
     margin: 0px auto;
     max-width: 100vw;
     width: 100vw;
     height: 76px;
+
+    top: unset;
     bottom: 0px;
     right: 0;
-    top: unset;
+    left: 0;
     opacity: 1;
-
   }
 `
 
@@ -61,6 +68,7 @@ export const LeftMenu = styled.aside<BurgerMenu>`
       breakpoints.xl}) {
     position: fixed;
     transform: translateX(-110vw);
+    visibility: hidden;
 
     ${({ open }) =>
       open &&
@@ -99,7 +107,7 @@ export const RightMenu = styled.aside`
 
   @media screen and (max-width: ${({ theme: { breakpoints } }) =>
       breakpoints.xl}) {
-    animation-name: ${fadeIn};
+    animation-name: ${fadeOut};
     animation-duration: 1s;
     animation-fill-mode: forwards;
 

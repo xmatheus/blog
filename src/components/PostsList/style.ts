@@ -13,4 +13,20 @@ export const Container = styled.div`
     align-items: center;
     margin-left: 0px;
   }
+
+  a {
+    text-decoration: none;
+    outline: none;
+    display: flex;
+    width: auto;
+    /* min-height: 143px; */
+    width: 95%;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 64px;
+
+    :focus {
+      outline: -webkit-focus-ring-color auto 5px;
+    }
+  }
 `

@@ -3,17 +3,18 @@ import styled from 'styled-components'
 export const MyA = styled.a`
   text-decoration: none;
   outline: none;
-
   display: flex;
-
   width: auto;
-
-  min-height: 143px;
-
+  /* min-height: 143px; */
   width: 95%;
   border-radius: 5px;
-
   cursor: pointer;
+  margin-bottom: 64px;
+  transition: padding 0.4s ease-in-out;
+
+  :focus {
+    outline: -webkit-focus-ring-color auto 5px;
+  }
 `
 
 export const Container = styled.article`
@@ -21,7 +22,6 @@ export const Container = styled.article`
 
   width: auto;
 
-  margin-bottom: 64px;
   min-height: 143px;
 
   width: 95%;

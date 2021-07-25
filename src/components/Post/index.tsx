@@ -65,7 +65,7 @@ const Post: FC<PostProps> = ({ slug, title, summary, tags, time, content }) => {
     const words = content.trim().split(/\s+/).length
     const time = Math.ceil(words / wpm)
 
-    return `${time} min de leitura`
+    return `${time} min. de leitura`
   }
 
   useEffect(() => {
@@ -77,11 +77,11 @@ const Post: FC<PostProps> = ({ slug, title, summary, tags, time, content }) => {
 
   return (
     <Link href={`/${slug}`}>
-      <S.MyA title={`Postagem: ${title}`}>
+      <a title={`Postagem: ${title}`} tabIndex={0}>
         <S.Container>
           <S.Canvas
             ref={canvasRef}
-            title="Imagem gerada com base no titulo"
+            title="Varios pixels verdes em um grande quadrado, representando uma imagem unica gerada com base no titulo deste post"
           ></S.Canvas>
           <S.Divider id="divider" />
           <S.TextContent>
@@ -89,8 +89,8 @@ const Post: FC<PostProps> = ({ slug, title, summary, tags, time, content }) => {
               <time>{time}</time>
 
               <S.WrapperTimeRead>
-                <Eye />
-                {timeToRead(content)}
+                <Eye title="olho aberto" />
+                <p>{timeToRead(content)}</p>
               </S.WrapperTimeRead>
             </S.TopText>
 
@@ -106,7 +106,7 @@ const Post: FC<PostProps> = ({ slug, title, summary, tags, time, content }) => {
             </S.WrapperTags>
           </S.TextContent>
         </S.Container>
-      </S.MyA>
+      </a>
     </Link>
   )
 }

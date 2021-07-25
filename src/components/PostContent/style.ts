@@ -72,6 +72,10 @@ export const BackButton = styled.button`
 
   cursor: pointer;
 
+  :focus {
+    border: 1px solid ${({ theme }) => theme.colors.text};
+  }
+
   :hover {
     p {
       color: ${({ theme }) => theme.colors.primary};
@@ -84,6 +88,10 @@ export const BackButton = styled.button`
   @media screen and (max-width: ${({ theme: { breakpoints } }) =>
       breakpoints.xl}) {
     margin-top: 40px;
+  }
+
+  a {
+    display: flex;
   }
 
   svg {

@@ -43,6 +43,9 @@ const RightTools: FC = () => {
             onClick={() => {
               toggleTheme()
             }}
+            title={
+              'Botão que altera o tema do site. Tema atual = ' + theme.name
+            }
           >
             {sun ? <SunSVG /> : <NightSVG />}
           </S.Button>
@@ -52,6 +55,7 @@ const RightTools: FC = () => {
           onClick={() => {
             window.scrollTo(0, 0)
           }}
+          title="Botão que leva para o topo da página"
         >
           <ArrowSVG />
         </S.Button>

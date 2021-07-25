@@ -32,7 +32,7 @@ const PostContent: FC<PostProps> = ({ post }) => {
   return (
     <S.Wrapper>
       <S.Header>
-        <S.BackButton onClick={router.back}>
+        <S.BackButton onClick={router.back} tabIndex={0}>
           <ArrowSVG />
           <p>Voltar</p>
         </S.BackButton>
