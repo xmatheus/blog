@@ -1,12 +1,6 @@
 const withPWA = require('next-pwa')
 
 module.exports = withPWA({
-  pwa: {
-    dest: 'public'
-  }
-})
-
-module.exports = withPWA({
   webpack: (config, { isServer }) => {
     if (isServer) {
       require('./scripts/generateSiteMapXML')
@@ -24,3 +18,18 @@ module.exports = withPWA({
     dest: 'public'
   }
 })
+
+// module.exports = {
+//   webpack: (config, { isServer }) => {
+//     // if (isServer) {
+//     //   require('./scripts/generateSiteMapXML')
+//     // }
+
+//     config.module.rules.push({
+//       test: /\.svg$/,
+//       use: ['@svgr/webpack']
+//     })
+
+//     return config
+//   }
+// }
