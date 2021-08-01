@@ -173,23 +173,29 @@ export const Content = styled.div`
   blockquote,
   table,
   pre,
-  code {
+  code,
+  img {
     width: 100%;
   }
 
   pre {
     white-space: pre-wrap;
     word-wrap: break-word;
+
+    margin: 33.6px 0px;
+
+    span {
+      font-size: ${({ theme }) => theme.font.xsmall.size};
+    }
   }
 
   img {
-    width: 100%;
     object-fit: cover;
   }
 
   h2 {
     margin-top: ${({ theme }) => theme.spacing.xxlarge};
-    margin-bottom: ${({ theme }) => theme.spacing.small};
+    margin-bottom: ${({ theme }) => theme.spacing.xlarge};
 
     font-style: normal;
     font-weight: bold;
@@ -223,10 +229,6 @@ export const Content = styled.div`
 
     font-size: ${({ theme }) => theme.font.medium.size};
     line-height: 30px;
-  }
-
-  pre {
-    margin: 33.6px 0px;
   }
 
   a {
@@ -322,6 +324,9 @@ export const Content = styled.div`
         breakpoints.xl}) {
       font-size: ${({ theme }) => theme.font.small.size};
       line-height: ${({ theme }) => theme.font.small.line};
+    }
+    ::marker {
+      color: ${({ theme }) => theme.colors.text};
     }
   }
 `
