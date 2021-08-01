@@ -34,7 +34,7 @@ const font = {
     line: '1.7'
   },
   medium: {
-    size: '1.375rem' // 22px
+    size: '1.2rem' // 19.2px
   },
   large: {
     size: '1.5rem'
