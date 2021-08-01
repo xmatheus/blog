@@ -49,7 +49,7 @@ const PostContent: FC<PostProps> = ({ post }) => {
 
           <S.WrapperTimeRead>
             <EyeSVG />
-            {timeToRead(post.content)}
+            <p>{timeToRead(post.content)}</p>
           </S.WrapperTimeRead>
         </S.BellowText>
       </S.Header>
