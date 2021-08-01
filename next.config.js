@@ -18,18 +18,3 @@ module.exports = withPWA({
     dest: 'public'
   }
 })
-
-// module.exports = {
-//   webpack: (config, { isServer }) => {
-//     // if (isServer) {
-//     //   require('./scripts/generateSiteMapXML')
-//     // }
-
-//     config.module.rules.push({
-//       test: /\.svg$/,
-//       use: ['@svgr/webpack']
-//     })
-
-//     return config
-//   }
-// }
