@@ -62,7 +62,8 @@ export const LeftMenu = styled.aside<BurgerMenu>`
   border-right: 1px solid ${props => props.theme.colors.divider};
   background-color: ${({ theme }) => theme.colors.background};
 
-  transition: transform 0.4s ease-in-out, width 1s ease, max-width 1s ease;
+  transition: transform 0.4s ease-in-out, width 1s ease, max-width 1s ease,
+    visibility 1s ease-in-out 0.5s;
 
   @media screen and (max-width: ${({ theme: { breakpoints } }) =>
       breakpoints.xl}) {
