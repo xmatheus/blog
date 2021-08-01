@@ -1,10 +1,11 @@
 import { FC, createContext, useCallback, useContext, useState } from 'react'
 import { ThemeProvider } from 'styled-components'
+
 import dark, { white } from 'src/styles/theme'
 
 type Theme = typeof dark
 
-interface ThemeContextData {
+type ThemeContextData = {
   toggleTheme(): void
   theme: Theme
 }
@@ -19,7 +20,7 @@ export const CustomThemeProvider: FC = ({ children }) => {
   const toggleTheme = useCallback(() => {
     if (theme.name === 'dark') {
       setTheme(white)
-    } else if (theme.name === 'white') {
+    } else {
       setTheme(dark)
     }
   }, [theme])
