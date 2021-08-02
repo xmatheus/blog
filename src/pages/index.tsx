@@ -1,4 +1,3 @@
-import { FC } from 'react'
 import { GetStaticPropsResult } from 'next'
 import Head from 'next/head'
 
@@ -12,7 +11,7 @@ export interface IPosts {
   posts: Posts[]
 }
 
-const Page: FC<IPosts> = ({ posts }) => {
+const Page = ({ posts }: IPosts): JSX.Element => {
   return (
     <>
       <Head>

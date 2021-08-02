@@ -1,33 +1,16 @@
-import { FC } from 'react'
 import { useRouter } from 'next/router'
 
 import * as S from './style'
 import ArrowSVG from 'src/assets/top.svg'
 import EyeSVG from 'src/assets/eye.svg'
 import CalendarSVG from 'src/assets/calendar.svg'
+import { Posts } from 'src/services/api'
 
 interface PostProps {
-  post: {
-    title?: string
-    summary?: string
-    slug?: string
-    content?: string
-    createdAt?: {
-      iso: string
-      formated: string
-    }
-  }
+  post: Posts
 }
 
-function timeToRead(content: string): string {
-  const wpm = 225
-  const words = content.trim().split(/\s+/).length
-  const time = Math.ceil(words / wpm)
-
-  return `${time} min de leitura`
-}
-
-const PostContent: FC<PostProps> = ({ post }) => {
+const PostContent = ({ post }: PostProps): JSX.Element => {
   const router = useRouter()
   return (
     <S.Wrapper>
@@ -49,7 +32,7 @@ const PostContent: FC<PostProps> = ({ post }) => {
 
           <S.WrapperTimeRead>
             <EyeSVG />
-            <p>{timeToRead(post.content)}</p>
+            <p>{post.timeToRead}</p>
           </S.WrapperTimeRead>
         </S.BellowText>
       </S.Header>

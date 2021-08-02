@@ -9,7 +9,7 @@ import NightSVG from 'src/assets/night.svg'
 import ArrowSVG from 'src/assets/top.svg'
 import { useBurger } from 'src/context/burger'
 
-const RightTools: FC = () => {
+const RightTools = (): JSX.Element => {
   const { toggleTheme } = useTheme()
   const theme = useContext(ThemeContext)
   const [sun, setSun] = useState(false)

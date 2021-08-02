@@ -6,7 +6,7 @@ import EmailIcon from 'src/assets/email.svg'
 import GitIcon from 'src/assets/git.svg'
 import IgIcon from 'src/assets/ig.svg'
 
-const Author: React.FC = () => {
+const Author = (): JSX.Element => {
   return (
     <S.Container>
       <S.WrapperUserInfo>

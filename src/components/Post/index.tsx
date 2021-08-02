@@ -1,9 +1,10 @@
-import { FC, useContext, useEffect, useRef } from 'react'
+import { useContext, useEffect, useRef } from 'react'
 import { ThemeContext } from 'styled-components'
 import Link from 'next/link'
 
 import * as S from './style'
 import Eye from 'src/assets/eye.svg'
+import timeToRead from 'src/services/timeToRead'
 
 interface PostProps {
   slug: string
@@ -14,7 +15,14 @@ interface PostProps {
   content: string
 }
 
-const Post: FC<PostProps> = ({ slug, title, summary, tags, time, content }) => {
+const Post = ({
+  slug,
+  title,
+  summary,
+  tags,
+  time,
+  content
+}: PostProps): JSX.Element => {
   const canvasRef = useRef(null)
   const theme = useContext(ThemeContext)
 
@@ -54,14 +62,6 @@ const Post: FC<PostProps> = ({ slug, title, summary, tags, time, content }) => {
       ctx.fillStyle = theme.colors.primary
       ctx.fillRect(x, y, 1, 1)
     })
-  }
-
-  function timeToRead(content: string): string {
-    const wpm = 225
-    const words = content.trim().split(/\s+/).length
-    const time = Math.ceil(words / wpm)
-
-    return `${time} min. de leitura`
   }
 
   useEffect(() => {
