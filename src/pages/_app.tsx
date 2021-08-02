@@ -1,18 +1,12 @@
 import { ReactNode } from 'react'
-// import { AppProps } from 'next/app'
 import Head from 'next/head'
 
 import { CustomThemeProvider } from 'src/context/theme'
 import GlobalStyle from '../styles/global'
 import LayoutComplete from 'src/components/layouts/complete/index'
-// import { Page } from 'src/components/layouts/index'
 import BurgerProvider from 'src/context/burger'
 
-import './_app_dracula_highlight.css'
-
-// type Props = AppProps & {
-//   Component: Page
-// }
+import '../styles/dracula-prism.css'
 
 const MyApp: ReactNode = ({ Component, pageProps }): JSX.Element => {
   const { Layout = LayoutComplete } = Component
