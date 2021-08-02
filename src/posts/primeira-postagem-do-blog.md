@@ -10,7 +10,7 @@ createdAt:
 
 ## Um resumo resumido
 
-Me chamo Matheus e estou cursando Ciência da Computação pela UFMT, o **Blog** é uma forma para aprender mais e compartilhar conhecimento.
+Meu nome é Matheus e estou cursando Ciência da Computação pela UFMT, o **Blog** é uma forma para aprender mais e compartilhar conhecimento.
 
 Talvez você ser pergunte, o porquê criar um blog ao invés de utilizar o [medium.com](https://medium.com)? Bom, eu queria algo mais `meu` e também saber exatamente como funcionava um blog.
 
@@ -64,21 +64,19 @@ O [Remark](https://github.com/remarkjs/remark) é o responsável por transpilar 
 O código utilizado pelo blog está assim:
 
 ```javascript
-//markdown.js
+// src/service/markdown.js
 import remark from 'remark'
 import html from 'remark-html'
-import highlight from 'remark-highlight.js'
 import footnotes from 'remark-footnotes'
 import remarkGfm from 'remark-gfm'
+import prism from 'remark-prism'
 
 export async function toHTML(markdown) {
   const result = await remark()
-    .use(highlight, {
-      include: ['css', 'html', 'javascript', 'markdown', 'json', 'bash']
-    })
     .use(footnotes)
     .use(remarkGfm)
     .use(html)
+    .use(prism)
     .process(markdown)
 
   // <img src="/img.png"> to <img src="img.png" loading="lazy">
@@ -137,6 +135,7 @@ Os pixels foram desenhados no **Canvas**.\
 É necessário adicionar no CSS do **Canvas** a propriedade:
 
 ```css
+/* src/components/Post/style.tsx */
 image-rendering: pixelated;
 ```
 
@@ -145,6 +144,8 @@ essa propriedade mantém o estilo pixelado e com definição(sem um 'blur')
 #### Código completo(js)
 
 ```javascript
+// src/components/Post/index.tsx
+
 function drawRectanglePixel(
   cvs: HTMLCanvasElement,
   ctx: CanvasRenderingContext2D,
