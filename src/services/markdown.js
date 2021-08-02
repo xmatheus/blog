@@ -1,6 +1,5 @@
 import remark from 'remark'
 import html from 'remark-html'
-import highlight from 'remark-highlight.js'
 import footnotes from 'remark-footnotes'
 import remarkGfm from 'remark-gfm'
 import prism from 'remark-prism'
