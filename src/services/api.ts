@@ -14,6 +14,7 @@ export interface Posts {
     iso: string
     formated: string
   }
+  timeToRead?: string
 }
 
 const postsDirectory = join(process.cwd(), 'src/posts')

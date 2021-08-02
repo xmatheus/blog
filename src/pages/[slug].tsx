@@ -5,6 +5,7 @@ import PostContent from 'src/components/PostContent'
 import { generatePostSchema } from 'src/services/seo'
 import { getPost, getAllPosts, Posts } from 'src/services/api'
 import markdown from 'src/services/markdown.js'
+import timeToRead from 'src/services/timeToRead'
 
 export interface IPosts {
   post: Posts
@@ -45,6 +46,7 @@ export const getStaticProps: GetStaticProps = async ({
     'createdAt'
   ])
 
+  post.timeToRead = timeToRead(post.content)
   post.content = await markdown.toHTML(post.content)
 
   return {
