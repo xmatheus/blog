@@ -1,7 +1,7 @@
 ---
 title: 'O começo do blog'
 author: 'Matheus Felipe'
-summary: O motivo de eu criar um blog e a alguns detalhes sobre a construção dele
+summary: O motivo da criação do blog e alguns detalhes sobre a construção dele
 tags: 'Test, Hello word, Life'
 createdAt:
   iso: '2021-07-31T02:57:07.654Z'
@@ -20,9 +20,7 @@ Já faz um tempo que me pergunto se é melhor usar [Markdown](https://docs.pipz.
 > \
 > Um texto cru, o famoso .txt, ficaria feio e difícil para estilizar.
 
-```
 Talvez para algo usado por mais pessoas seria melhor usar um CMS, mas por aqui é só eu.
-```
 
 ## Quais conteúdos?
 
@@ -83,7 +81,10 @@ export async function toHTML(markdown) {
     .use(html)
     .process(markdown)
 
-  return result.toString()
+  // <img src="/img.png"> to <img src="img.png" loading="lazy">
+  return result
+    .toString()
+    .replace(/<img (?<rest>.*)">{1}/gm, `<img $1" loading="lazy">`)
 }
 
 export default { toHTML }
@@ -103,11 +104,76 @@ export default { toHTML }
 
 #### speedrun de uma postagem teste
 
-```
-sem mandar para o repositório no github
-```
+(sem mandar para o repositório no github)
 
 ![gif acelerado de eu criando uma postagem no blog](/content/speedrun.gif)
+
+## Bônus
+
+#### Por quê tem alguns quadrados do lado de cada postagem?
+
+Isso aqui:
+![vários quadrados verdes bem pequenos, alguns estão separados tanto em x quando em y](/content/pixels.png)
+
+> obs.: só aparece no desktop/computador/tablet
+
+É um suporte para postagem, foi feito apenas para decoração. É realmente necessário? Não!\
+Cada postagem tem seu mapa(quadradinhos/pixels) único, ou quase único.
+
+O algoritmo funciona indo em cada letra do título e pegando a posição dela no alfabeto, começando em 1 e indo até 26, depois é feito dois condicionais que usam o índice da letra no título, com isso é gerado um **x** e **y**, e o algoritmo desenha um retângulo de 1 pixel nessa posição.
+
+_condicional 1_ => Se o **índice** daquela letra no título for par, o **x** recebe o valor do **índice**. Se não, o **x** fica sendo o índice da letra no alfabeto.
+
+_condicional 2_ => Se o **x** for par, o **y** vai ser o índice da letra no alfabeto. Se não, o **y** fica sendo o índice da letra no título.
+
+```javascript
+const x = indexInString % 2 === 0 ? indexInString : indexInAlphabet
+const y = x % 2 === 0 ? indexInAlphabet : indexInString
+```
+
+#### Canvas.
+
+Os pixels foram desenhados no **Canvas**.\
+É necessário adicionar no CSS do **Canvas** a propriedade:
+
+```css
+image-rendering: pixelated;
+```
+
+essa propriedade mantém o estilo pixelado e com definição(sem um 'blur')
+
+#### Código completo(js)
+
+```javascript
+function drawRectanglePixel(
+  cvs: HTMLCanvasElement,
+  ctx: CanvasRenderingContext2D,
+  str: string
+) {
+  str = str.replace(/[^\w\s]/gi, '').replace(/\s/gi, '')
+
+  let size = str.split('').length
+
+  size = size < 26 ? 26 : size
+
+  cvs.width = size
+  cvs.height = size
+
+  drawChess(ctx, size)
+
+  str.split('').forEach((s, indexInString) => {
+    if (indexInString === str.length - 1) return
+
+    const indexInAlphabet = s.toLowerCase().charCodeAt(0) - 97 + 1
+
+    const x = indexInString % 2 === 0 ? indexInString : indexInAlphabet
+    const y = x % 2 === 0 ? indexInAlphabet : indexInString
+
+    ctx.fillStyle = theme.colors.primary
+    ctx.fillRect(x, y, 1, 1)
+  })
+}
+```
 
 ## Final
 
