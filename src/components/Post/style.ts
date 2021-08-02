@@ -98,8 +98,7 @@ export const Canvas = styled.canvas`
   margin-right: ${({ theme }) => theme.spacing.xsmall};
 
   image-rendering: pixelated;
-  image-rendering: crisp-edges;
-  image-rendering: -moz-crisp-edges;
+  /* image-rendering: crisp-edges; */
 
   @media screen and (max-width: ${({ theme: { breakpoints } }) =>
       breakpoints.xl}) {

@@ -43,20 +43,16 @@ const Post: FC<PostProps> = ({ slug, title, summary, tags, time, content }) => {
 
     drawChess(ctx, size)
 
-    // console.log('size ', size)
+    str.split('').forEach((s, indexInString) => {
+      if (indexInString === str.length - 1) return
 
-    str.split('').forEach((s, idx) => {
-      if (idx === str.length - 1) return
+      const indexInAlphabet = s.toLowerCase().charCodeAt(0) - 97 + 1
 
-      const aux = s.toLowerCase().charCodeAt(0) - 97 + 1
-
-      const x = idx % 2 === 0 ? idx : aux
-      const y = x % 2 === 0 ? aux : idx
+      const x = indexInString % 2 === 0 ? indexInString : indexInAlphabet
+      const y = x % 2 === 0 ? indexInAlphabet : indexInString
 
       ctx.fillStyle = theme.colors.primary
       ctx.fillRect(x, y, 1, 1)
-
-      // console.log(`${str} => ${x} ${y}`)
     })
   }
 
