@@ -42,7 +42,7 @@ const RightTools = (): JSX.Element => {
                 id="burger-check"
                 tabIndex={-1}
                 checked={openBurger}
-                onChange={() => {}}
+                onChange={() => null}
               />
               <span></span>
             </S.BurgerMenu>
