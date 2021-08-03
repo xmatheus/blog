@@ -29,26 +29,20 @@ const RightTools = (): JSX.Element => {
         <S.TopButtonsWrapper>
           <S.Button
             onClick={() => {
-              console.log('button')
               setBurger(!openBurger)
             }}
+            aria-label="botão que abre o menu lateral"
           >
             {/* <SearchSVG /> */}
-            <S.BurgerMenu
-              tabIndex={-1}
-              onClick={() => {
-                console.log('burger')
-              }}
-            >
+            <S.BurgerMenu tabIndex={-1}>
               <input
                 type="checkbox"
-                name=""
+                name="abre o menu hamburger"
+                aria-hidden="true"
                 id="burger-check"
                 tabIndex={-1}
                 checked={openBurger}
-                onClick={() => {
-                  console.log('input')
-                }}
+                onChange={() => {}}
               />
               <span></span>
             </S.BurgerMenu>
@@ -61,6 +55,9 @@ const RightTools = (): JSX.Element => {
             title={
               'Botão que altera o tema do site. Tema atual = ' + theme.name
             }
+            aria-label={
+              'Botão que altera o tema do site. Tema atual = ' + theme.name
+            }
           >
             {sun ? <SunSVG /> : <NightSVG />}
           </S.Button>
@@ -71,6 +68,7 @@ const RightTools = (): JSX.Element => {
             window.scrollTo(0, 0)
           }}
           title="Botão que leva para o topo da página"
+          aria-label="Botão que leva para o topo da página"
         >
           <ArrowSVG />
         </S.Button>
