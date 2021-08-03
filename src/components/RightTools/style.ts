@@ -139,6 +139,10 @@ export const BurgerMenu = styled.div`
     opacity: 0;
     z-index: 3;
     cursor: pointer;
+
+    :focus-visible {
+      outline: -webkit-focus-ring-color auto 1px;
+    }
   }
 
   input:checked {

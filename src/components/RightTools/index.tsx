@@ -1,4 +1,4 @@
-import { FC, useContext, useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { ThemeContext } from 'styled-components'
 
 import { useTheme } from 'src/context/theme'
@@ -27,14 +27,29 @@ const RightTools = (): JSX.Element => {
     <S.Container>
       <S.Wrapper>
         <S.TopButtonsWrapper>
-          <S.Button>
+          <S.Button
+            onClick={() => {
+              console.log('button')
+              setBurger(!openBurger)
+            }}
+          >
             {/* <SearchSVG /> */}
             <S.BurgerMenu
+              tabIndex={-1}
               onClick={() => {
-                setBurger(!openBurger)
+                console.log('burger')
               }}
             >
-              <input type="checkbox" name="" id="burger-check" />
+              <input
+                type="checkbox"
+                name=""
+                id="burger-check"
+                tabIndex={-1}
+                checked={openBurger}
+                onClick={() => {
+                  console.log('input')
+                }}
+              />
               <span></span>
             </S.BurgerMenu>
           </S.Button>

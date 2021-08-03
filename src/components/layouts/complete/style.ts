@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components'
+import styled, { keyframes, css } from 'styled-components'
 
 const fadeOut = keyframes`
   0% {
@@ -62,24 +62,24 @@ export const LeftMenu = styled.aside<BurgerMenu>`
   border-right: 1px solid ${props => props.theme.colors.divider};
   background-color: ${({ theme }) => theme.colors.background};
 
-  transition: transform 0.4s ease-in-out, width 1s ease, max-width 1s ease,
-    visibility 1s ease-in-out 0.5s;
+  transition: transform 0.4s ease-in-out 0.2s, width 1s ease 0s,
+    max-width 1s ease 0s, visibility 1s ease-in-out 0.2s;
 
   @media screen and (max-width: ${({ theme: { breakpoints } }) =>
       breakpoints.xl}) {
     position: fixed;
-    transform: translateX(-110vw);
+    transform: translateX(-101vw);
     visibility: hidden;
+    max-width: 100vw;
+    width: 100vw;
 
     ${({ open }) =>
       open &&
-      `
-      visibility: unset;
-      max-width: 100vw;
-      width:100vw;
-      z-index:2;
-      transform: translateX(0);
-    `}
+      css`
+        visibility: visible;
+        z-index: 2;
+        transform: translateX(0);
+      `}
   }
 `
 

@@ -5,6 +5,7 @@ import Link from 'next/link'
 import * as S from './style'
 import Eye from 'src/assets/eye.svg'
 import timeToRead from 'src/services/timeToRead'
+import { useBurger } from 'src/context/burger'
 
 interface PostProps {
   slug: string
@@ -25,6 +26,7 @@ const Post = ({
 }: PostProps): JSX.Element => {
   const canvasRef = useRef(null)
   const theme = useContext(ThemeContext)
+  const { openBurger } = useBurger()
 
   function drawChess(ctx: CanvasRenderingContext2D, size: number) {
     for (let i = 0; i < size; i++) {
@@ -73,7 +75,7 @@ const Post = ({
 
   return (
     <Link href={`/${slug}`}>
-      <a title={`Postagem: ${title}`} tabIndex={0}>
+      <a title={`Postagem: ${title}`} tabIndex={openBurger ? -1 : 0}>
         <S.Container>
           <S.Canvas
             ref={canvasRef}

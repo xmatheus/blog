@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Wrapper = styled.section`
   margin: 0px auto;
-  max-width: 988px;
+  max-width: 900px;
   width: 96%;
 
   @media screen and (max-width: ${({ theme: { breakpoints } }) =>
@@ -159,7 +159,7 @@ export const Content = styled.div`
     font-style: normal;
     font-weight: normal;
     font-size: ${({ theme }) => theme.font.medium.size};
-    line-height: 33.6px;
+    line-height: ${({ theme }) => theme.font.medium.line};
 
     color: ${({ theme }) => theme.colors.textContent};
 
@@ -168,13 +168,24 @@ export const Content = styled.div`
       font-size: ${({ theme }) => theme.font.small.size};
       line-height: ${({ theme }) => theme.font.small.line};
     }
+
+    strong {
+      font-weight: bold;
+      color: ${({ theme }) => theme.colors.bold};
+    }
+    code {
+      background-color: ${({ theme }) => theme.colors.backgroundDiv};
+      padding: 4px;
+      border-radius: 2px;
+    }
   }
 
   blockquote,
   table,
   pre,
   code,
-  img {
+  img,
+  video {
     width: 100%;
   }
 
@@ -195,7 +206,7 @@ export const Content = styled.div`
 
   h2 {
     margin-top: ${({ theme }) => theme.spacing.xxlarge};
-    margin-bottom: ${({ theme }) => theme.spacing.xlarge};
+    margin-bottom: ${({ theme }) => theme.spacing.large};
 
     font-style: normal;
     font-weight: bold;
@@ -235,22 +246,13 @@ export const Content = styled.div`
     color: ${({ theme }) => theme.colors.primary};
   }
 
-  p {
-    strong {
-      font-weight: bold;
-      color: ${({ theme }) => theme.colors.bold};
-    }
-    code {
-      background-color: ${({ theme }) => theme.colors.backgroundDiv};
-      padding: 4px;
-      border-radius: 2px;
-    }
-  }
-
   blockquote {
     width: 100%;
     border-left: 0.3rem solid ${({ theme }) => theme.colors.primary};
-    padding: 0px 1.9rem;
+    padding-top: ${({ theme }) => theme.spacing.bit};
+    padding-bottom: ${({ theme }) => theme.spacing.bit};
+    padding-left: ${({ theme }) => theme.spacing.medium};
+    padding-right: ${({ theme }) => theme.spacing.medium};
     margin: 3.2rem auto;
 
     background-color: ${({ theme }) => theme.colors.backgroundDiv};
@@ -261,8 +263,8 @@ export const Content = styled.div`
 
       @media screen and (max-width: ${({ theme: { breakpoints } }) =>
           breakpoints.xl}) {
-        font-size: ${({ theme }) => theme.font.small.size};
-        line-height: ${({ theme }) => theme.font.small.line};
+        font-size: ${({ theme }) => theme.font.xsmall.size};
+        line-height: ${({ theme }) => theme.font.xsmall.line};
       }
     }
   }
