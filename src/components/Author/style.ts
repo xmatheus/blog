@@ -9,6 +9,11 @@ export const WrapperUserInfo = styled.div`
   margin-top: ${({ theme }) => theme.spacing.xxlarge};
   margin-left: 56px;
   width: 100%;
+
+  @media screen and (max-width: ${({ theme: { breakpoints } }) =>
+      breakpoints.xl}) {
+    margin-left: 24px;
+  }
 `
 export const ImageAndUserName = styled.div`
   width: 100%;
@@ -17,6 +22,11 @@ export const ImageAndUserName = styled.div`
   img {
     object-fit: cover;
     border-radius: 5px;
+
+    @media screen and (max-width: ${({ theme: { breakpoints } }) =>
+        breakpoints.xl}) {
+      width: 94px;
+    }
   }
 
   h1 {
@@ -31,6 +41,11 @@ export const ImageAndUserName = styled.div`
 
     color: ${({ theme }) => theme.colors.text};
 
+    @media screen and (max-width: ${({ theme: { breakpoints } }) =>
+        breakpoints.xl}) {
+      font-size: ${({ theme }) => theme.font.xlarge.size};
+    }
+
     small {
       margin-top: 8px;
 
@@ -41,6 +56,11 @@ export const ImageAndUserName = styled.div`
       letter-spacing: 0px;
 
       color: ${({ theme }) => theme.colors.subText};
+
+      @media screen and (max-width: ${({ theme: { breakpoints } }) =>
+          breakpoints.xl}) {
+        font-size: ${({ theme }) => theme.font.medium.size};
+      }
     }
   }
 `
@@ -52,11 +72,17 @@ export const UserDescription = styled.p`
 
   font-style: normal;
   font-weight: normal;
-  font-size: ${({ theme }) => theme.font.xsmall};
+  font-size: ${({ theme }) => theme.font.xsmall.size};
   line-height: ${({ theme }) => theme.font.defaultLineHeight};
   letter-spacing: 0px;
 
   color: ${({ theme }) => theme.colors.subText};
+
+  @media screen and (max-width: ${({ theme: { breakpoints } }) =>
+      breakpoints.xl}) {
+    width: 100%;
+    font-size: ${({ theme }) => theme.font.medium.size};
+  }
 `
 
 export const WrapperIcons = styled.div`
@@ -79,6 +105,43 @@ export const WrapperIcons = styled.div`
   a:hover {
     path {
       stroke: ${({ theme }) => theme.colors.primary};
+    }
+  }
+
+  #gitIcon {
+    width: 18px;
+    height: 20px;
+  }
+
+  #igIcon {
+    width: 18px;
+    height: 18px;
+  }
+
+  #emailIcon {
+    width: 21px;
+    height: 17px;
+  }
+
+  @media screen and (max-width: ${({ theme: { breakpoints } }) =>
+      breakpoints.xl}) {
+    #gitIcon {
+      width: 26px;
+      height: 28px;
+    }
+
+    #igIcon {
+      width: 26px;
+      height: 26px;
+    }
+
+    #emailIcon {
+      width: 29px;
+      height: 25px;
+    }
+
+    a {
+      margin-right: ${({ theme }) => theme.spacing.large};
     }
   }
 `

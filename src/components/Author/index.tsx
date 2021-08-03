@@ -12,6 +12,7 @@ const Author = (): JSX.Element => {
       <S.WrapperUserInfo>
         <S.ImageAndUserName>
           <Image
+            quality={100}
             src={'/mf.jpg'}
             width={51}
             height={51}
@@ -35,7 +36,7 @@ const Author = (): JSX.Element => {
             title="github do autor"
             rel="noreferrer"
           >
-            <GitIcon alt="icone do github" />
+            <GitIcon id="gitIcon" alt="icone do github" />
           </a>
           <a
             href="https://www.instagram.com/matheus.ftc/"
@@ -43,7 +44,7 @@ const Author = (): JSX.Element => {
             title="instagram do autor"
             rel="noreferrer"
           >
-            <IgIcon alt="icone do instagram" />
+            <IgIcon id="igIcon" alt="icone do instagram" />
           </a>
           <a
             href="https://mail.google.com/mail/?view=cm&fs=1&to=matheuscorreia559@gmail.com&su=Olá Matheus :)&body=Cheguei aqui pelo blog"
@@ -51,7 +52,7 @@ const Author = (): JSX.Element => {
             title="enviar um email para o autor"
             rel="noreferrer"
           >
-            <EmailIcon alt="icone de email" />
+            <EmailIcon id="emailIcon" alt="icone de email" />
           </a>
         </S.WrapperIcons>
       </S.WrapperUserInfo>
