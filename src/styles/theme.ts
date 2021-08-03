@@ -7,6 +7,7 @@ const breakpoints = {
 }
 
 const spacing = {
+  bit: '0.0125rem', // 2px
   xxsmall: '0.5rem', // 8px
   xsmall: '1rem', // 16px
   small: '1.5rem', // 24px
@@ -27,14 +28,16 @@ const font = {
     size: '0.875rem' // 14px
   },
   xsmall: {
-    size: '1rem' // 16px,
+    size: '1rem', // 16px,
+    line: '1.7'
   },
   small: {
     size: '1.125rem', // 18px
     line: '1.7'
   },
   medium: {
-    size: '1.2rem' // 19.2px
+    size: '1.2rem', // 19.2px
+    line: '1.7'
   },
   large: {
     size: '1.5rem'
