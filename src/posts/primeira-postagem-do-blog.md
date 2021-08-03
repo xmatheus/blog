@@ -10,7 +10,7 @@ createdAt:
 
 ## Um resumo resumido
 
-Meu nome é Matheus e estou cursando Ciência da Computação pela UFMT, o **Blog** é uma forma para aprender mais e compartilhar conhecimento.
+Meu nome é Matheus e estou cursando Ciência da Computação pela UFMT, o **Blog** é uma forma para aprender mais e também compartilhar conhecimento.
 
 Talvez você ser pergunte, o porquê criar um blog ao invés de utilizar o [medium.com](https://medium.com)? Bom, eu queria algo mais `meu` e também saber exatamente como funcionava um blog.
 
@@ -19,8 +19,6 @@ Já faz um tempo que me pergunto se é melhor usar [Markdown](https://docs.pipz.
 > Sem termos técnicos demais: Markdown e HTML são 'apenas' linguagens de marcação, aqui eles devem deixar o conteúdo do blog em um padrão para eu poder manipular.\
 > \
 > Um texto cru, o famoso .txt, ficaria feio e difícil para estilizar.
-
-Talvez para algo usado por mais pessoas seria melhor usar um CMS, mas por aqui é só eu.
 
 ## Quais conteúdos?
 
@@ -100,11 +98,31 @@ export default { toHTML }
 
 5.  Vocês veem uma nova postagem no blog :)
 
+Acredito que para algo usado por mais pessoas seria melhor usar um CMS, mas por aqui é só eu ✌️.
+
 #### speedrun de uma postagem teste
 
 (sem mandar para o repositório no github)
 
 ![gif acelerado de eu criando uma postagem no blog](/content/speedrun.gif)
+
+## Acessibilidade
+
+Usando como base os conhecimentos tanto de UI/UX quanto das postagens do [Willian Justen](https://willianjusten.com.br/) eu melhorei a acessibilidade desse blog... Coloquei em prática o uso dos **_tabindex, alt, title e html semântico_** + uns truques com a **ContextAPI**.
+
+> se você é uma pessoa portadora de necessidades especiais e/ou utiliza leitores de tela, por favor me mande um feedback sobre a acessibilidade desse blog.\
+> email: matheuscorreia559@gmail.com\
+> \
+> Eu testei, mas é sempre bom ter o feedback do público alvo.
+
+Nesse vídeo abaixo a navegação foi feita apenas com o teclado, perceba a mudança do **_tabindex_** no canto direito.
+Esse menu da esquerda quando ativo, desabilita o **_tabindex_** das postagens, permitindo que o usuário só navegue na área visível(aqui que entra a **contextAPI**).
+
+<figure class="video_container">
+  <video controls loop autoplay>
+    <source src="/content/acessibilidade.mp4" type="video/mp4">
+  </video>
+</figure>
 
 ## Bônus
 
@@ -118,7 +136,7 @@ Isso aqui:
 É um suporte para postagem, foi feito apenas para decoração. É realmente necessário? Não!\
 Cada postagem tem seu mapa(quadradinhos/pixels) único, ou quase único.
 
-O algoritmo funciona indo em cada letra do título e pegando a posição dela no alfabeto, começando em 1 e indo até 26, depois é feito dois condicionais que usam o índice da letra no título, com isso é gerado um **x** e **y**, e o algoritmo desenha um retângulo de 1 pixel nessa posição.
+O algoritmo funciona indo em cada letra do título e pegando a posição dela no alfabeto, começando em 1 e indo até 26, depois é feito duas condicionais que usam o índice da letra no título, com isso é gerado um **x** e **y**, e o algoritmo desenha um retângulo de 1 pixel nessa posição.
 
 _condicional 1_ => Se o **índice** daquela letra no título for par, o **x** recebe o valor do **índice**. Se não, o **x** fica sendo o índice da letra no alfabeto.
 
@@ -141,7 +159,11 @@ image-rendering: pixelated;
 
 essa propriedade mantém o estilo pixelado e com definição(sem um 'blur')
 
-#### Código completo(js)
+Abaixo você encontra como ficaria sem a propriedade **_image-rendering:pixelated_**
+
+![vários quadrados verdes bem pequenos, alguns estão separados tanto em x quando em y, mas tem um blur nos quadrados](/content/pixelSemCSS.png)
+
+#### Código que cria os quadrados(js)
 
 ```javascript
 // src/components/Post/index.tsx
