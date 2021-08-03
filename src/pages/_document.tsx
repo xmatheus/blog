@@ -48,6 +48,20 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
             rel="stylesheet"
           ></link>
+          <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-0NR0J4QCGW"
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-0NR0J4QCGW', { page_path: window.location.pathname });
+            `
+            }}
+          />
         </Head>
         <body>
           <Main />
