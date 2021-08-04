@@ -2,7 +2,7 @@
 title: 'O começo do blog'
 author: 'Matheus Felipe'
 summary: O motivo da criação do blog e alguns detalhes sobre a construção dele
-tags: 'Test, Hello word, Life'
+tags: 'Hello world, Javascript, Nextjs'
 createdAt:
   iso: '2021-07-31T02:57:07.654Z'
   formated: 30 de Julho de 2021
