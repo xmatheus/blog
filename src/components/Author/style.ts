@@ -13,6 +13,7 @@ export const WrapperUserInfo = styled.div`
   @media screen and (max-width: ${({ theme: { breakpoints } }) =>
       breakpoints.xl}) {
     margin-left: 24px;
+    margin-right: 24px;
   }
 `
 export const ImageAndUserName = styled.div`
