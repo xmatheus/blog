@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 export const Container = styled.div`
   display: flex;
@@ -64,61 +64,63 @@ export const TopButtonsWrapper = styled.div`
 `
 
 export const Button = styled.button`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  ${({ theme }) => css`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-  width: 36px;
-  height: 35px;
+    width: 36px;
+    height: 35px;
 
-  background: ${({ theme }) => theme.colors.backgroundDiv};
-  border-radius: 5px;
+    background: ${theme.colors.backgroundDiv};
+    border-radius: 5px;
 
-  border: none;
-  outline: none;
+    border: none;
+    outline: none;
 
-  cursor: pointer;
+    cursor: pointer;
 
-  transition: filter 0.4s ease-in-out, transform 0.2s ease-in-out;
+    transition: filter 0.4s ease-in-out, transform 0.2s ease-in-out;
 
-  :hover {
-    filter: brightness(0.8);
-    transform: translateY(-1px);
-  }
+    :hover {
+      filter: brightness(0.8);
+      transform: translateY(-1px);
+    }
 
-  :focus {
-    border: 1px solid ${({ theme }) => theme.colors.text};
-  }
-
-  @media screen and (max-width: ${({ theme: { breakpoints } }) =>
-      breakpoints.xl}) {
-    width: 48px;
-    height: 48px;
-  }
-
-  path {
-    transition: stroke 0.4s ease-in-out;
-    stroke: ${({ theme }) => theme.colors.text};
-  }
-
-  :nth-of-type(2) {
-    margin-top: ${({ theme }) => theme.spacing.xsmall};
+    :focus {
+      border: 1px solid ${theme.colors.text};
+    }
 
     @media screen and (max-width: ${({ theme: { breakpoints } }) =>
         breakpoints.xl}) {
-      margin-top: 0px;
+      width: 48px;
+      height: 48px;
     }
-  }
 
-  :last-of-type {
-    margin-bottom: 23px;
-
-    @media screen and (max-width: ${({ theme: { breakpoints } }) =>
-        breakpoints.xl}) {
-      margin-bottom: 0px;
+    path {
+      transition: stroke 0.4s ease-in-out;
+      stroke: ${theme.colors.text};
     }
-  }
+
+    :nth-of-type(2) {
+      margin-top: ${theme.spacing.xsmall};
+
+      @media screen and (max-width: ${({ theme: { breakpoints } }) =>
+          breakpoints.xl}) {
+        margin-top: 0px;
+      }
+    }
+
+    :last-of-type {
+      margin-bottom: 23px;
+
+      @media screen and (max-width: ${({ theme: { breakpoints } }) =>
+          breakpoints.xl}) {
+        margin-bottom: 0px;
+      }
+    }
+  `}
 `
 
 export const BurgerMenu = styled.div`

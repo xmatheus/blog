@@ -9,11 +9,14 @@ export default createGlobalStyle`
   }
 
   body {
-    background: ${props => props.theme.colors.background};
-    color: ${props => props.theme.colors.text};
+    background: ${({ theme }) => theme.colors.background};
+    color: ${({ theme }) => theme.colors.text};
     font: 400 ${({ theme }) => theme.spacing.xsmall} Inter, sans-serif;
     overflow-x: hidden;
     font-size: 100%;
+    font-family: 'Inter';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
     /* width */
@@ -29,12 +32,12 @@ export default createGlobalStyle`
 
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: ${props => props.theme.colors.primary};
+    background: ${({ theme }) => theme.colors.primary};
     border-radius: 5px;
   }
 
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover &{
-    background: ${props => props.theme.colors.subText};
+    background: ${({ theme }) => theme.colors.subText};
   }
 `
