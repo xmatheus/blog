@@ -11,10 +11,9 @@ export default createGlobalStyle`
   body {
     background: ${({ theme }) => theme.colors.background};
     color: ${({ theme }) => theme.colors.text};
-    font: 400 ${({ theme }) => theme.spacing.xsmall} Inter, sans-serif;
+    font: 400 ${({ theme }) => theme.spacing.xsmall} 'Inter', sans-serif;
     overflow-x: hidden;
     font-size: 100%;
-    font-family: 'Inter';
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
