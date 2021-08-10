@@ -43,13 +43,7 @@ export default class MyDocument extends Document {
       <Html lang="pt">
         <Head>
           <meta charSet="utf-8" />
-
-          <link
-            rel="preload"
-            as="font"
-            href="/fonts/style.css"
-            type="font/truetype"
-          />
+          <link rel="stylesheet" href="/fonts/style.css" />
 
           <script
             async
