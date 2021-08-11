@@ -1,11 +1,10 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 export const MyA = styled.a`
   text-decoration: none;
   outline: none;
   display: flex;
   width: auto;
-  /* min-height: 143px; */
   width: 95%;
   border-radius: 5px;
   cursor: pointer;
@@ -18,58 +17,56 @@ export const MyA = styled.a`
 `
 
 export const Container = styled.article`
-  display: flex;
+  ${({ theme }) => css`
+    display: flex;
+    width: auto;
+    min-height: 143px;
+    width: 95%;
+    border-radius: 5px;
 
-  width: auto;
-
-  min-height: 143px;
-
-  width: 95%;
-  border-radius: 5px;
-
-  :hover #divider {
-    width: 1px;
-    background-color: ${({ theme }) => theme.colors.primary};
-  }
-
-  :hover svg {
-    path {
-      stroke: ${({ theme }) => theme.colors.primary};
+    :hover #divider {
+      width: 1px;
+      background-color: ${theme.colors.primary};
     }
-  }
 
-  :hover h2 {
-    color: ${({ theme }) => theme.colors.primary};
-  }
+    :hover svg {
+      path {
+        stroke: ${theme.colors.primary};
+      }
+    }
+
+    :hover h2 {
+      color: ${theme.colors.primary};
+    }
+  `}
 `
 
 export const TextContent = styled.div`
-  display: flex;
-  flex-direction: column;
+  ${({ theme }) => css`
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin-left: ${theme.spacing.xsmall};
 
-  height: 100%;
-  margin-left: ${({ theme }) => theme.spacing.xsmall};
+    h2 {
+      margin-top: ${theme.spacing.xsmall};
+      font-style: normal;
+      font-weight: bold;
+      font-size: ${theme.font.xlarge};
+      line-height: ${theme.font.defaultLineHeight};
+      color: ${theme.colors.text};
+    }
 
-  h2 {
-    margin-top: ${({ theme }) => theme.spacing.xsmall};
-    font-style: normal;
-    font-weight: bold;
-    font-size: ${({ theme }) => theme.font.xlarge};
-    line-height: ${({ theme }) => theme.font.defaultLineHeight};
-
-    color: ${({ theme }) => theme.colors.text};
-  }
-
-  @media screen and (max-width: ${({ theme: { breakpoints } }) =>
-      breakpoints.xl}) {
-    margin-left: 0px;
-  }
+    @media screen and (max-width: ${({ theme: { breakpoints } }) =>
+        breakpoints.xl}) {
+      margin-left: 0px;
+    }
+  `}
 `
 
 export const Divider = styled.div`
   height: auto;
   width: 1px;
-
   background-color: ${({ theme }) => theme.colors.divider};
 
   @media screen and (max-width: ${({ theme: { breakpoints } }) =>
@@ -79,51 +76,50 @@ export const Divider = styled.div`
 `
 
 export const Summary = styled.p`
-  margin-top: 8px;
-  font-style: normal;
-  font-weight: normal;
-  font-size: ${({ theme }) => theme.font.small.size};
-  line-height: ${({ theme }) => theme.font.defaultLineHeight};
-
-  text-decoration: none;
-
-  color: ${({ theme }) => theme.colors.subText};
+  ${({ theme }) => css`
+    margin-top: 8px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: ${theme.font.small.size};
+    line-height: ${theme.font.defaultLineHeight};
+    text-decoration: none;
+    color: ${theme.colors.subText};
+  `}
 `
 
 export const Canvas = styled.canvas`
-  width: 143px;
-  height: 143px;
+  ${({ theme }) => css`
+    width: 143px;
+    height: 143px;
+    background-color: ${theme.colors.background};
+    margin-right: ${theme.spacing.xsmall};
+    image-rendering: pixelated;
 
-  background-color: ${({ theme }) => theme.colors.background};
-  margin-right: ${({ theme }) => theme.spacing.xsmall};
-
-  image-rendering: pixelated;
-  /* image-rendering: crisp-edges; */
-
-  @media screen and (max-width: ${({ theme: { breakpoints } }) =>
-      breakpoints.xl}) {
-    display: none;
-    width: 94px;
-    height: 94px;
-  }
+    @media screen and (max-width: ${({ theme: { breakpoints } }) =>
+        breakpoints.xl}) {
+      display: none;
+      width: 94px;
+      height: 94px;
+    }
+  `}
 `
 
 export const TopText = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: flex-start;
+  ${({ theme }) => css`
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    font-style: normal;
+    font-weight: normal;
+    font-size: ${theme.font.xxsmall.size};
+    line-height: 17px;
+    color: ${theme.colors.subText};
 
-  font-style: normal;
-  font-weight: normal;
-  font-size: ${({ theme }) => theme.font.xxsmall.size};
-  line-height: 17px;
-
-  color: ${({ theme }) => theme.colors.subText};
-
-  time {
-    margin-right: 32px;
-  }
+    time {
+      margin-right: 32px;
+    }
+  `}
 `
 export const WrapperTimeRead = styled.div`
   display: flex;
@@ -144,9 +140,9 @@ export const WrapperTags = styled.div`
 `
 
 export const Tag = styled.p`
-  margin-right: ${({ theme }) => theme.spacing.xsmall};
-
-  font-size: ${({ theme }) => theme.font.xsmall};
-
-  color: ${({ theme }) => theme.colors.primary};
+  ${({ theme }) => css`
+    margin-right: ${theme.spacing.xsmall};
+    font-size: ${theme.font.xsmall};
+    color: ${theme.colors.primary};
+  `}
 `

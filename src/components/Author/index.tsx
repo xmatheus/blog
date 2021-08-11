@@ -25,8 +25,7 @@ const Author = (): JSX.Element => {
         </S.ImageAndUserName>
 
         <S.UserDescription>
-          Sou graduando em ciência da computação e gosto de escrever uns cógidos
-          :)
+          Sou graduando em Ciência da Computação {'&&'} Front-end {'&&'} UI/UX.
         </S.UserDescription>
 
         <S.WrapperIcons>

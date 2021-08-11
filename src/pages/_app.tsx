@@ -1,15 +1,28 @@
-import { ReactNode } from 'react'
+import { ReactNode, useEffect } from 'react'
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 
 import { CustomThemeProvider } from 'src/context/theme'
 import GlobalStyle from '../styles/global'
 import LayoutComplete from 'src/components/layouts/complete/index'
 import BurgerProvider from 'src/context/burger'
+import * as gtag from 'src/services/gtag'
 
 import '../styles/dracula-prism.css'
 
 const MyApp: ReactNode = ({ Component, pageProps }): JSX.Element => {
   const { Layout = LayoutComplete } = Component
+
+  const router = useRouter()
+  useEffect(() => {
+    const handleRouteChange = url => {
+      gtag.pageview(url)
+    }
+    router.events.on('routeChangeComplete', handleRouteChange)
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange)
+    }
+  }, [router.events])
 
   return (
     <>

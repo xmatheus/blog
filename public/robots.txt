@@ -1,4 +1,5 @@
 User-agent: *
+Allow: /
 Disallow: /offline
 
 Sitemap: https://xmatheus.dev/sitemap.xml

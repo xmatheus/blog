@@ -4,7 +4,7 @@ import Head from 'next/head'
 import PostContent from 'src/components/PostContent'
 import { generatePostSchema } from 'src/services/seo'
 import { getPost, getAllPosts, Posts } from 'src/services/api'
-import markdown from 'src/services/markdown.js'
+import markdownToHTML from 'src/services/markdown.js'
 import timeToRead from 'src/services/timeToRead'
 
 export interface IPosts {
@@ -47,7 +47,7 @@ export const getStaticProps: GetStaticProps = async ({
   ])
 
   post.timeToRead = timeToRead(post.content)
-  post.content = await markdown.toHTML(post.content)
+  post.content = await markdownToHTML(post.content)
 
   return {
     props: { post }

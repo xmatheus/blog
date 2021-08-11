@@ -37,10 +37,14 @@ const fadeOut = keyframes`
 `
 
 export const Container = styled.section`
+  max-width: 1920px;
   width: 100vw;
   height: 100%;
   display: flex;
   transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
+
+  margin: 0px auto;
+  /* border-left: 1px; */
 `
 
 interface BurgerMenu {
@@ -94,9 +98,7 @@ export const Main = styled.main`
   }
 `
 export const RightMenu = styled.aside`
-  /* border-left: 1px solid ${props => props.theme.colors.divider}; */
   height: 100vh;
-  /* height: 100%; */
   max-width: 76px;
   width: 100%;
 

@@ -2,7 +2,7 @@
 title: 'O começo do blog'
 author: 'Matheus Felipe'
 summary: O motivo da criação do blog e alguns detalhes sobre a construção dele
-tags: 'Test, Hello word, Life'
+tags: 'Hello world, Javascript, Nextjs'
 createdAt:
   iso: '2021-07-31T02:57:07.654Z'
   formated: 30 de Julho de 2021
@@ -69,7 +69,7 @@ import footnotes from 'remark-footnotes'
 import remarkGfm from 'remark-gfm'
 import prism from 'remark-prism'
 
-export async function toHTML(markdown) {
+export default async function toHTML(markdown) {
   const result = await remark()
     .use(footnotes)
     .use(remarkGfm)
@@ -80,10 +80,8 @@ export async function toHTML(markdown) {
   // <img src="/img.png"> to <img src="img.png" loading="lazy">
   return result
     .toString()
-    .replace(/<img (?<rest>.*)">{1}/gm, `<img $1" loading="lazy">`)
+    .replace(/<img (?<attributes>.*)">{1}/gm, `<img $1" loading="lazy">`)
 }
-
-export default { toHTML }
 ```
 
 ## Como está funcionando
@@ -108,15 +106,15 @@ Acredito que para algo usado por mais pessoas seria melhor usar um CMS, mas por 
 
 ## Acessibilidade
 
-Usando como base os conhecimentos tanto de UI/UX quanto das postagens do [Willian Justen](https://willianjusten.com.br/) eu melhorei a acessibilidade desse blog... Coloquei em prática o uso dos **_tabindex, alt, title e html semântico_** + uns truques com a **ContextAPI**.
+Usando como base meus conhecimentos de UI e também as postagens do [Willian Justen](https://willianjusten.com.br/), eu melhorei a acessibilidade desse blog. Coloquei em prática o uso dos **_tabindex, alt, title e html semântico_** + uns truques com a **ContextAPI**.
 
 > se você é uma pessoa portadora de necessidades especiais e/ou utiliza leitores de tela, por favor me mande um feedback sobre a acessibilidade desse blog.\
 > email: matheuscorreia559@gmail.com\
 > \
 > Eu testei, mas é sempre bom ter o feedback do público alvo.
 
-Nesse vídeo abaixo a navegação foi feita apenas com o teclado, perceba a mudança do **_tabindex_** no canto direito.
-Esse menu da esquerda quando ativo, desabilita o **_tabindex_** das postagens, permitindo que o usuário só navegue na área visível(aqui que entra a **contextAPI**).
+No vídeo abaixo, a navegação foi feita apenas com o teclado, perceba a mudança do **_tabindex_** no canto direito.
+Esse menu da esquerda, quando ativo, desabilita o **_tabindex_** das postagens, permitindo que o usuário só navegue na área visível(aqui que entra a **contextAPI**).
 
 <figure class="video_container">
   <video controls loop autoplay>
