@@ -185,6 +185,10 @@ export const Content = styled.div`
       width: 100%;
     }
 
+    figure {
+      margin: ${theme.spacing.xsmall} 0px;
+    }
+
     pre {
       white-space: pre-wrap;
       word-wrap: break-word;
