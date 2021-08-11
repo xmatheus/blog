@@ -106,15 +106,15 @@ Acredito que para algo usado por mais pessoas seria melhor usar um CMS, mas por 
 
 ## Acessibilidade
 
-Usando como base os conhecimentos tanto de UI/UX quanto das postagens do [Willian Justen](https://willianjusten.com.br/) eu melhorei a acessibilidade desse blog... Coloquei em prática o uso dos **_tabindex, alt, title e html semântico_** + uns truques com a **ContextAPI**.
+Usando como base meus conhecimentos de UI e também as postagens do [Willian Justen](https://willianjusten.com.br/), eu melhorei a acessibilidade desse blog. Coloquei em prática o uso dos **_tabindex, alt, title e html semântico_** + uns truques com a **ContextAPI**.
 
 > se você é uma pessoa portadora de necessidades especiais e/ou utiliza leitores de tela, por favor me mande um feedback sobre a acessibilidade desse blog.\
 > email: matheuscorreia559@gmail.com\
 > \
 > Eu testei, mas é sempre bom ter o feedback do público alvo.
 
-Nesse vídeo abaixo a navegação foi feita apenas com o teclado, perceba a mudança do **_tabindex_** no canto direito.
-Esse menu da esquerda quando ativo, desabilita o **_tabindex_** das postagens, permitindo que o usuário só navegue na área visível(aqui que entra a **contextAPI**).
+No vídeo abaixo, a navegação foi feita apenas com o teclado, perceba a mudança do **_tabindex_** no canto direito.
+Esse menu da esquerda, quando ativo, desabilita o **_tabindex_** das postagens, permitindo que o usuário só navegue na área visível(aqui que entra a **contextAPI**).
 
 <figure class="video_container">
   <video controls loop autoplay>
