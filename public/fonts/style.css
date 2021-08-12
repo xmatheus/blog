@@ -14,6 +14,7 @@
       format('truetype'),
     /* Safari, Android, iOS */ url('../fonts/inter-v3-latin-regular.svg#Inter')
       format('svg'); /* Legacy iOS */
+  font-display: swap;
 }
 /* inter-500 - latin */
 @font-face {
@@ -30,6 +31,7 @@
       format('truetype'),
     /* Safari, Android, iOS */ url('../fonts/inter-v3-latin-500.svg#Inter')
       format('svg'); /* Legacy iOS */
+  font-display: swap;
 }
 /* inter-700 - latin */
 @font-face {
@@ -46,4 +48,5 @@
       format('truetype'),
     /* Safari, Android, iOS */ url('../fonts/inter-v3-latin-700.svg#Inter')
       format('svg'); /* Legacy iOS */
+  font-display: swap;
 }
