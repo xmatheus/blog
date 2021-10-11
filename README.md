@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/xmatheus/blog/blob/master/public/seo/180_180.png?raw=true" alt="Logo do blog, junção do F mais um M, o F está localizado na perna esquerda do M">
+  <img src="https://github.com/xmatheus/blog/blob/master/public/seo/192_192.png?raw=true" alt="Logo do blog, junção do F mais um M, o F está localizado na perna esquerda do M">
 </p>
 
 
