@@ -12,7 +12,6 @@ const Author = (): JSX.Element => {
       <S.WrapperUserInfo>
         <S.ImageAndUserName>
           <Image
-            quality={100}
             src={'/mf.jpg'}
             width={51}
             height={51}
