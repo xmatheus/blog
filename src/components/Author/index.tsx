@@ -15,7 +15,7 @@ const Author = (): JSX.Element => {
             src={'/mf.jpg'}
             width={51}
             height={51}
-            alt=" Imagem preto e branca do autor do blog. Estou com os braços em cima de uma mesa e olhando para a camera que está do meu lado esquerdo"
+            alt="Imagem preto e branca do autor do blog. Estou com os braços em cima de uma mesa e olhando para a camera que está do meu lado esquerdo"
           ></Image>
 
           <h1>
@@ -24,7 +24,7 @@ const Author = (): JSX.Element => {
         </S.ImageAndUserName>
 
         <S.UserDescription>
-          Sou graduando em Ciência da Computação {'&&'} Front-end {'&&'} UI/UX.
+          Sou graduando em Ciência da Computação, gosto de Front-end e UI/UX.
         </S.UserDescription>
 
         <S.WrapperIcons>
