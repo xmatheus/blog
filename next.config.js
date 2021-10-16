@@ -1,9 +1,18 @@
 const withPWA = require('next-pwa')
 
 module.exports = withPWA({
-  webpack: (config, { isServer }) => {
+  webpack: (config, { dev, isServer }) => {
     if (isServer) {
       require('./scripts/generateSiteMapXML')
+    }
+
+    // Replace React with Preact only in client production build
+    if (!dev && !isServer) {
+      Object.assign(config.resolve.alias, {
+        react: 'preact/compat',
+        'react-dom/test-utils': 'preact/test-utils',
+        'react-dom': 'preact/compat'
+      })
     }
 
     config.module.rules.push({
