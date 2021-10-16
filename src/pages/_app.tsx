@@ -7,6 +7,7 @@ import GlobalStyle from '../styles/global'
 import LayoutComplete from 'src/components/layouts/complete/index'
 import BurgerProvider from 'src/context/burger'
 import * as gtag from 'src/services/gtag'
+import Analytics from 'src/components/Analystics'
 
 import '../styles/dracula-prism.css'
 
@@ -14,6 +15,7 @@ const MyApp: ReactNode = ({ Component, pageProps }): JSX.Element => {
   const { Layout = LayoutComplete } = Component
 
   const router = useRouter()
+
   useEffect(() => {
     const handleRouteChange = url => {
       gtag.pageview(url)
@@ -72,6 +74,7 @@ const MyApp: ReactNode = ({ Component, pageProps }): JSX.Element => {
           <GlobalStyle />
         </BurgerProvider>
       </CustomThemeProvider>
+      <Analytics />
     </>
   )
 }
