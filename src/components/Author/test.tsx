@@ -1,5 +1,4 @@
 import { render, screen } from '@testing-library/react'
-import React from 'react'
 import { CustomThemeProvider } from 'src/context/theme'
 import Author from './index'
 
