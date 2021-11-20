@@ -8,6 +8,7 @@ const Analytics = () => (
       src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
     />
     <Script
+      id="analystic-blog"
       strategy="afterInteractive"
       dangerouslySetInnerHTML={{
         __html: `
