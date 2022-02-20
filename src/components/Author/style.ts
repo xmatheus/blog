@@ -113,6 +113,9 @@ export const WrapperIcons = styled.div`
       path {
         stroke: ${theme.colors.primary};
       }
+      #dribblelIcon {
+        fill: ${theme.colors.primary};
+      }
     }
 
     #gitIcon {
@@ -130,6 +133,13 @@ export const WrapperIcons = styled.div`
       height: 17px;
     }
 
+    #dribblelIcon {
+      width: 18px;
+      height: 18px;
+      object-fit: cover;
+      fill: ${theme.colors.subText};
+    }
+
     @media screen and (max-width: ${({ theme: { breakpoints } }) =>
         breakpoints.xl}) {
       #gitIcon {
@@ -142,7 +152,8 @@ export const WrapperIcons = styled.div`
         height: 26px;
       }
 
-      #emailIcon {
+      #emailIcon,
+      #dribblelIcon {
         width: 29px;
         height: 25px;
       }

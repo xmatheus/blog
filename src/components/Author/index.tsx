@@ -5,6 +5,7 @@ import * as S from './style'
 import EmailIcon from 'src/assets/email.svg'
 import GitIcon from 'src/assets/git.svg'
 import IgIcon from 'src/assets/ig.svg'
+import DribbbleIcon from 'src/assets/dribbble.svg'
 
 const Author = (): JSX.Element => {
   return (
@@ -51,6 +52,14 @@ const Author = (): JSX.Element => {
             rel="noreferrer"
           >
             <EmailIcon id="emailIcon" alt="icone de email" />
+          </a>
+          <a
+            href="https://dribbble.com/xmatheus"
+            target="_blank"
+            title="Dribbble do autor"
+            rel="noreferrer"
+          >
+            <DribbbleIcon id="dribblelIcon" alt="icone de email" />
           </a>
         </S.WrapperIcons>
       </S.WrapperUserInfo>
