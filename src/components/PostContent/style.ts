@@ -240,6 +240,7 @@ export const Content = styled.div`
 
     a {
       color: ${theme.colors.primary};
+      word-break: break-word;
     }
 
     blockquote {
