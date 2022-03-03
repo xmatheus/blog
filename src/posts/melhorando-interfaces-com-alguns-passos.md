@@ -8,8 +8,6 @@ createdAt:
   formated: '02 de Março de 2022'
 ---
 
-Hoje irei lhe ensinar conceitos simples para você melhorar as suas interfaces, querido dev web ou não :]
-
 Já tem um bom tempo que eu me aventuro no mundo de UI/UX e acredito que consigo compartilhar alguns conteúdos úteis e que possam ajudar no dia a dia. Então, vamos aprender sobre: Contraste, hierarquia visual, espaçamento e efeitos simples de sombreamento.
 
 Obs.: não coloquei nenhuma cor fora nosso preto total(#000) e branco total(#fffff). Também evitei definir valores no texto, o objetivo é apenas conceitos e não padrões de tamanho, etc.
