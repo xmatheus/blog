@@ -25,7 +25,7 @@ export const Title = styled.h1`
     font-size: ${theme.font.mxxlarge.size};
     line-height: ${theme.font.mxxlarge.lineHeight};
     letter-spacing: 0.02em;
-    margin-bottom: ${theme.spacing.xsmall};
+    margin-bottom: ${theme.spacing.large};
     color: ${theme.colors.text};
 
     @media screen and (max-width: ${({ theme: { breakpoints } }) =>
