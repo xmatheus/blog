@@ -50,7 +50,7 @@ const MyApp: ReactNode = ({ Component, pageProps }): JSX.Element => {
         <link rel="shortcut icon" href="/seo/32.png" />
 
         {/* Manifest para PWA */}
-        <link rel="manifest" href="/seo/manifest.json" />
+        <link rel="manifest" href="/seo/manifest.webmanifest" />
 
         {/* Detalhes da aplicação */}
         <meta name="application-name" content="xmatheus.dev" />

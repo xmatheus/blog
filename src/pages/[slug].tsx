@@ -23,6 +23,7 @@ const Page = ({ post }: IPosts): JSX.Element => {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
         />
+        <link rel="canonical" href={`https://xmatheus.dev/${post.slug}`}></link>
       </Head>
       <PostContent post={post} />
     </>
