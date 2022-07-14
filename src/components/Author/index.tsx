@@ -14,8 +14,8 @@ const Author = (): JSX.Element => {
         <S.ImageAndUserName>
           <Image
             src={'/mf.jpg'}
-            width={51}
-            height={51}
+            width="51px"
+            height="51px"
             alt="Imagem preto e branca do autor do blog. Estou com os braços em cima de uma mesa e olhando para a camera que está do meu lado esquerdo"
           ></Image>
 
