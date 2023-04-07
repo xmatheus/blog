@@ -45,6 +45,11 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Inter&display=optional"
             rel="stylesheet"
           />
+          <script
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8257941755830922"
+            crossOrigin="anonymous"
+          ></script>
         </Head>
         <body>
           <Main />
