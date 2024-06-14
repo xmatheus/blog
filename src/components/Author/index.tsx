@@ -25,7 +25,9 @@ const Author = (): JSX.Element => {
         </S.ImageAndUserName>
 
         <S.UserDescription>
-          Trabalho como FullStack e sou formado em Ciência da Computação pela UFMT. Gosto de mexer com JS, Python e de vez enquando me aventuro em C e programacão dinâmica.
+          Trabalho como FullStack e sou formado em Ciência da Computação pela
+          UFMT. Gosto de mexer com JS, Python e de vez enquando me aventuro em C
+          e programacão dinâmica.
         </S.UserDescription>
 
         <S.WrapperIcons>
