@@ -13,8 +13,9 @@ Rewrite xmatheus.dev from Next.js 12 (Pages Router, styled-components) to Next.j
 - Next.js 16 (App Router, Server Components, Turbopack)
 - React 19, TypeScript 5
 - Tailwind CSS 4
-- Remark pipeline (remark-gfm, remark-footnotes, remark-html, remark-prism)
+- Remark pipeline (remark-gfm, remark-footnotes, remark-html, remark-prism) + Dracula theme
 - Satoshi font (self-hosted via `next/font/local`)
+- `lucide-react` for icons (replaces `@svgr/webpack` custom SVGs)
 - Google Analytics via `@next/third-parties`
 
 ---
@@ -24,12 +25,15 @@ Rewrite xmatheus.dev from Next.js 12 (Pages Router, styled-components) to Next.j
 ```
 app/
   layout.tsx          # Root layout (metadata global, fonts, theme provider)
+  globals.css         # Tailwind directives + @theme customization + Dracula CSS
   page.tsx            # Home — hero + posts recentes + projetos
-  [slug]/
-    page.tsx          # Post individual
+  blog/
+    [slug]/
+      page.tsx        # Post individual (generateStaticParams + generateMetadata)
   projects/
     page.tsx          # Página de projetos (opcional)
   not-found.tsx       # 404
+  error.tsx           # Runtime error boundary
   sitemap.ts          # Sitemap dinâmico
   robots.ts           # robots.txt dinâmico
   feed.xml/
@@ -41,16 +45,17 @@ lib/
   posts.ts            # Leitura de posts (filesystem + gray-matter)
   markdown.ts         # Pipeline remark → HTML
 components/
-  Author.tsx
   PostCard.tsx
   ProjectCard.tsx
-  ThemeToggle.tsx
+  ThemeToggle.tsx      # Client component ("use client")
   Header.tsx
   Footer.tsx
 public/
   fonts/              # Satoshi font files
   seo/                # Favicon, OG image, etc.
 ```
+
+**Route constraints:** Post slugs live under `/blog/[slug]` to avoid collision with static routes (`/projects`, `/feed.xml`, etc.). URLs become `xmatheus.dev/blog/post-name`.
 
 ---
 
@@ -88,7 +93,7 @@ public/
 
 ### Home page — 3 seções
 
-1. **Hero** — nome, título (Full Stack Developer), bio curta, links sociais (GitHub, Instagram, Email, Dribbble)
+1. **Hero** — nome, título (Full Stack Developer), bio curta, skills (JavaScript, React, Node.js, Python, C), links sociais (GitHub, Instagram, Email, Dribbble)
 2. **Projetos em destaque** — cards com título, descrição, tags, link (filtrados por `featured: true`)
 3. **Posts recentes** — lista com data, título, resumo, tags, tempo de leitura
 
@@ -122,10 +127,12 @@ updatedAt: '2021-08-01'
 ---
 ```
 
-- `createdAt` como ISO date string (formatação no componente)
-- `updatedAt` opcional, usado no schema.org `dateModified`
+- **Migration:** existing posts use nested `createdAt: {iso, formated}` — migrate to flat `createdAt: 'YYYY-MM-DD'` string. Only 2 posts, manual edit.
+- `updatedAt` optional — when absent, `dateModified` in schema.org falls back to `createdAt`
 - Remark pipeline: remark → remark-gfm → remark-footnotes → remark-html → remark-prism
+- Dracula CSS theme imported in `app/globals.css`
 - Lazy loading automático em imagens
+- `generateStaticParams()` in `app/blog/[slug]/page.tsx` to statically generate all posts at build time
 
 ### Projects (`content/projects.json`)
 
@@ -200,6 +207,9 @@ updatedAt: '2021-08-01'
 - Burger menu / sidebar (layout simplificado)
 - `nextjs-progressbar`
 - Componente `RightTools`
+- `@svgr/webpack` (replaced by `lucide-react`)
+- Skills section as standalone grid (moved into hero as inline tags)
+- `NewsArticle` schema (replaced by `Article` — blog posts are not news)
 
 ## Mantido/Adaptado
 
@@ -212,10 +222,18 @@ updatedAt: '2021-08-01'
 
 ## Novo
 
-- Tailwind CSS 4
+- Tailwind CSS 4 (theme via `@theme` directives in `app/globals.css`)
 - Satoshi font (self-hosted)
+- `lucide-react` for icons
 - `content/projects.json`
 - Sitemap, robots.txt, RSS feed dinâmicos
 - Metadata API nativa
 - JSON-LD correto (Article, Person, WebSite, Breadcrumbs)
 - Canonical URLs
+- `error.tsx` runtime error boundary
+- Post routes under `/blog/[slug]` with `generateStaticParams()`
+
+## Deployment
+
+- Vercel (current: blog-xmatheus.vercel.app / xmatheus.dev)
+- Environment variable: `NEXT_PUBLIC_GA_ID` for Google Analytics
