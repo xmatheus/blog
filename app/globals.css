@@ -563,3 +563,24 @@ pre[class*='language-'] {
 .highlight-line-remove {
   background-color: var(--red-30);
 }
+
+/* Post content styles */
+.prose-custom { line-height: 1.8; }
+.prose-custom h2 { font-size: 1.5rem; font-weight: 700; margin-top: 2.5rem; margin-bottom: 0.75rem; }
+.prose-custom h3 { font-size: 1.25rem; font-weight: 700; margin-top: 2rem; margin-bottom: 0.5rem; }
+.prose-custom p { margin-bottom: 1.25rem; }
+.prose-custom a { color: var(--color-accent); text-decoration: underline; text-underline-offset: 2px; }
+.prose-custom a:hover { color: var(--color-accent-hover); }
+.prose-custom code { font-family: 'Fira Code', Consolas, Monaco, monospace; font-size: 0.9em; padding: 0.2rem 0.4rem; border-radius: 0.25rem; }
+:root.dark .prose-custom code { background-color: var(--color-surface); }
+:root.light .prose-custom code { background-color: #f1f5f9; }
+.prose-custom pre code { background: none; padding: 0; }
+.prose-custom pre { border-radius: 0.5rem; overflow-x: auto; margin-bottom: 1.25rem; }
+.prose-custom blockquote { border-left: 2px solid var(--color-accent); padding-left: 1rem; font-style: italic; }
+:root.dark .prose-custom blockquote { color: var(--color-text-secondary); }
+:root.light .prose-custom blockquote { color: var(--color-text-secondary-light); }
+.prose-custom ul, .prose-custom ol { margin-bottom: 1.25rem; padding-left: 1.5rem; }
+.prose-custom img { max-width: 100%; border-radius: 0.5rem; }
+.prose-custom hr { border: 0; height: 1px; margin: 2rem 0; }
+:root.dark .prose-custom hr { background-color: var(--color-divider); }
+:root.light .prose-custom hr { background-color: var(--color-divider-light); }
