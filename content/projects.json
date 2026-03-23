@@ -1,0 +1,9 @@
+[
+  {
+    "title": "Blog Pessoal",
+    "description": "Site pessoal e blog construído com Next.js, Tailwind CSS e Markdown",
+    "tags": ["Next.js", "Tailwind CSS", "TypeScript"],
+    "link": "https://github.com/xmatheus/blog",
+    "featured": true
+  }
+]
