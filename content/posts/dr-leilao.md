@@ -240,6 +240,6 @@ O sitemap é `force-dynamic` com try/catch e fallback para build time, já que p
 - **Separar I/O de escrita vale a pena.** O sync com duas fases (fetch paralelo, write controlado) foi a diferença entre um processo estável e um que falhava por timeout
 - **Views materializadas resolvem agregações.** Se os dados mudam em frequência previsível, materializar evita cálculos repetidos sem complexidade de cache aplicacional
 - **Dashboard público como estratégia de conteúdo.** A página de insights não é só feature, é uma página de entrada orgânica que demonstra a profundidade dos dados
-- **Discord como painel de monitoramento funciona.** Para projetos solo, webhooks do Discord são mais práticos que qualquer ferramenta de observabilidade enterprise
+- **Discord + PostHog é um combo eficiente.** PostHog cuida da observabilidade real (analytics, funnels, session replay). Discord fica para notificações rápidas: alertas de erros em checkout, logs de sync e avisos de novas assinaturas. Webhooks do Discord são práticos para esse tipo de alerta instantâneo sem precisar abrir dashboard
 
 O Dr. Leilão começou como uma lista simples e hoje tem pipeline de dados, blog com conteúdo programático, insights com 9 gráficos, alertas inteligentes, histórico de preço e pagamentos. O que mantém tudo gerenciável é a simplicidade da stack: um framework fullstack, um banco de dados, e decisões pragmáticas sobre o que automatizar e o que não.
