@@ -14,4 +14,12 @@ export async function markdownToHtml(markdown: string): Promise<string> {
       /<img (?<attributes>.*)">{1}/gm,
       '<img $1" loading="lazy" width="200" height="auto">'
     )
+    .replace(
+      /<table>/g,
+      '<div class="table-wrapper"><table>'
+    )
+    .replace(
+      /<\/table>/g,
+      '</table></div>'
+    )
 }

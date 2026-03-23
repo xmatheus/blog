@@ -1,8 +1,11 @@
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
+import Link from 'next/link'
+import { ArrowLeft } from 'lucide-react'
 import { getAllSlugs, getPost } from '@/lib/posts'
 import { markdownToHtml } from '@/lib/markdown'
 import { SITE_URL, AUTHOR } from '@/lib/constants'
+import PrismHighlight from '@/components/PrismHighlight'
 
 export async function generateStaticParams() {
   return getAllSlugs().map(slug => ({ slug }))
@@ -67,18 +70,35 @@ export default async function BlogPost(props: { params: Promise<{ slug: string }
     <>
       {/* Safe: JSON-LD uses hardcoded constants and trusted post metadata */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <article className="py-8">
-        <header className="mb-8">
-          <h1 className="text-3xl font-bold leading-tight">{post.title}</h1>
-          <p className="mt-2 text-[var(--color-text-secondary)]">{post.summary}</p>
-          <div className="mt-3 flex items-center gap-3 text-sm text-[var(--color-text-secondary)]">
+
+      <article className="flex flex-col gap-8">
+        <div className="animate-in">
+          <Link
+            href="/"
+            className="inline-flex items-center gap-1.5 text-sm text-quaternary-color transition-colors hover:text-primary-color group"
+          >
+            <ArrowLeft size={14} className="transition-transform group-hover:-translate-x-0.5" />
+            <span>Voltar</span>
+          </Link>
+        </div>
+
+        <header className="flex flex-col gap-3 animate-in delay-1">
+          <h1 className="text-2xl font-semibold tracking-tight leading-tight text-pretty">
+            {post.title}
+          </h1>
+          <p className="text-secondary-color leading-relaxed text-pretty">
+            {post.summary}
+          </p>
+          <div className="flex items-center gap-3 text-sm text-quaternary-color">
             <time dateTime={post.createdAt}>{formatDate(post.createdAt)}</time>
-            <span>·</span>
+            <span>&middot;</span>
             <span>{post.timeToRead}</span>
           </div>
         </header>
+
         {/* Safe: HTML is from local trusted .md files processed at build time via remark */}
-        <div className="prose-custom" dangerouslySetInnerHTML={{ __html: htmlContent }} />
+        <div className="prose-custom animate-in delay-2" dangerouslySetInnerHTML={{ __html: htmlContent }} />
+        <PrismHighlight />
       </article>
     </>
   )

@@ -31,6 +31,17 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
   },
+  icons: {
+    icon: [
+      { url: '/seo/16_16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/seo/32_32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/seo/192_192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/seo/512_512.png', sizes: '512x512', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/seo/192_192.png', sizes: '192x192' },
+    ],
+  },
   alternates: {
     canonical: '/',
     types: {
@@ -43,21 +54,21 @@ const themeScript = `
   (function() {
     try {
       var t = localStorage.getItem('theme');
-      if (t === 'light' || t === 'dark') {
-        document.documentElement.classList.remove('dark', 'light');
-        document.documentElement.classList.add(t);
-      }
-    } catch(e) {}
+      var theme = (t === 'light' || t === 'dark') ? t : 'dark';
+      document.documentElement.classList.add(theme);
+    } catch(e) {
+      document.documentElement.classList.add('dark');
+    }
   })();
 `
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pt-BR" className={`dark ${satoshi.variable}`}>
+    <html lang="pt-BR" className={satoshi.variable} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
-      <body className="font-[family-name:var(--font-satoshi)] antialiased">
+      <body className="min-h-screen font-[family-name:var(--font-satoshi)] antialiased">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -91,8 +102,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }}
         />
         <ThemeProvider>
+          <div className="geo-bg" aria-hidden="true" />
           <Header />
-          <main className="mx-auto max-w-[680px] px-4 py-8">
+          <main className="mx-auto max-w-2xl px-5 py-16 sm:py-24">
             {children}
           </main>
           <Footer />

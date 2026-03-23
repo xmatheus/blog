@@ -10,12 +10,12 @@ const links = [
 
 export default function Footer() {
   return (
-    <footer className="mx-auto max-w-[680px] px-4 py-12">
-      <div className="flex items-center justify-between border-t border-[var(--color-divider)] pt-8">
-        <p className="text-sm text-[var(--color-text-secondary)]">
+    <footer className="mx-auto max-w-2xl px-5 py-16">
+      <div className="flex items-center justify-between">
+        <span className="text-sm text-quaternary-color">
           &copy; {new Date().getFullYear()} Matheus Felipe
-        </p>
-        <div className="flex items-center gap-4">
+        </span>
+        <div className="flex items-center gap-1">
           {links.map(({ href, icon: Icon, label }) => (
             <a
               key={label}
@@ -23,9 +23,9 @@ export default function Footer() {
               target="_blank"
               rel="noreferrer"
               aria-label={label}
-              className="text-[var(--color-text-secondary)] transition-colors hover:text-[var(--color-accent)]"
+              className="flex h-9 w-9 items-center justify-center rounded-full text-quaternary-color transition-colors hover:text-primary-color hover-bg"
             >
-              <Icon size={18} />
+              <Icon size={16} strokeWidth={1.5} />
             </a>
           ))}
         </div>

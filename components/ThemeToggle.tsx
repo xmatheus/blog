@@ -10,10 +10,9 @@ export default function ThemeToggle() {
     <button
       onClick={toggleTheme}
       aria-label={`Trocar para tema ${theme === 'dark' ? 'claro' : 'escuro'}`}
-      title={`Tema atual: ${theme}`}
-      className="p-2 rounded-md transition-colors hover:bg-[var(--color-surface)]"
+      className="flex h-9 w-9 items-center justify-center rounded-full transition-colors hover-bg"
     >
-      {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+      {theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
     </button>
   )
 }
