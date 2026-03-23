@@ -1,12 +1,10 @@
 import { remark } from 'remark'
 import html from 'remark-html'
 import remarkGfm from 'remark-gfm'
-import prism from 'remark-prism'
 
 export async function markdownToHtml(markdown: string): Promise<string> {
   const result = await remark()
     .use(remarkGfm)
-    .use(prism)
     .use(html, { sanitize: false })
     .process(markdown)
 
