@@ -22,6 +22,21 @@ export const metadata: Metadata = {
   },
   description: 'Site pessoal e blog de Matheus Felipe, desenvolvedor Full Stack especializado em JavaScript, React e Node.js',
   metadataBase: new URL('https://xmatheus.dev'),
+  openGraph: {
+    siteName: 'Matheus Felipe',
+    type: 'website',
+    locale: 'pt_BR',
+    images: [{ url: '/seo/og-image.png', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+  },
+  alternates: {
+    canonical: '/',
+    types: {
+      'application/rss+xml': '/feed.xml',
+    },
+  },
 }
 
 const themeScript = `
@@ -43,6 +58,38 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body className="font-[family-name:var(--font-satoshi)] antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify([
+              {
+                '@context': 'https://schema.org',
+                '@type': 'WebSite',
+                name: 'Matheus Felipe',
+                url: 'https://xmatheus.dev',
+              },
+              {
+                '@context': 'https://schema.org',
+                '@type': 'Person',
+                name: 'Matheus Felipe Teodoro Correia',
+                url: 'https://xmatheus.dev',
+                jobTitle: 'Full Stack Developer',
+                sameAs: [
+                  'https://github.com/xmatheus',
+                  'https://www.instagram.com/matheus.ftc/',
+                  'https://dribbble.com/xmatheus',
+                ],
+              },
+              {
+                '@context': 'https://schema.org',
+                '@type': 'BreadcrumbList',
+                itemListElement: [
+                  { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://xmatheus.dev' },
+                ],
+              },
+            ]),
+          }}
+        />
         <ThemeProvider>
           <Header />
           <main className="mx-auto max-w-[680px] px-4 py-8">
