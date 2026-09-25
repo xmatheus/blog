@@ -7,7 +7,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - **Dev server:** `npm run dev` (Astro, http://localhost:4321)
 - **Build:** `npm run build` (runs `astro check` then `astro build` → `dist/`)
 - **Preview on the Cloudflare runtime:** `npm run preview` (`wrangler dev`, serves `dist/`)
-- **Deploy:** `npm run deploy` (build + `wrangler deploy`)
+- **Deploy:** automatic on push to `master` (Cloudflare Workers Builds runs `npm run build` + `npx wrangler deploy`). `npm run deploy` does the same manually.
 
 ## Architecture
 

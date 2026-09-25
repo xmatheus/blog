@@ -13,7 +13,7 @@ npm install
 npm run dev      # http://localhost:4321
 npm run build    # gera dist/
 npm run preview  # roda dist/ no runtime local da Cloudflare (wrangler)
-npm run deploy   # build + wrangler deploy
+npm run deploy   # build + wrangler deploy (manual; push no master já faz deploy automático)
 ```
 
 O ID do Google Analytics fica em `.env.production` (só é usado em builds de produção).
