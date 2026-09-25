@@ -1,0 +1,88 @@
+---
+import Icon from '@/components/ui/Icon.astro'
+import ThemeToggle from '@/components/layout/ThemeToggle.astro'
+import { NAV_LINKS } from '@/config/site'
+
+const linkProps = (external: boolean) => (external ? { target: '_blank', rel: 'noreferrer' } : {})
+---
+
+<header data-header class="sticky top-0 z-50 transition-colors duration-300 bg-main">
+  <div class="mx-auto flex h-14 max-w-2xl items-center justify-between px-5">
+    <a href="/" class="text-[15px] font-semibold tracking-tight transition-colors hover:text-[var(--color-secondary)]">
+      Home
+    </a>
+
+    <!-- Desktop -->
+    <nav class="hidden items-center gap-1 sm:flex">
+      {
+        NAV_LINKS.map(link => (
+          <a
+            href={link.href}
+            {...linkProps(link.external)}
+            class="rounded-full px-3 py-1.5 text-sm text-secondary-color transition-colors hover-bg"
+          >
+            {link.label}
+          </a>
+        ))
+      }
+      <ThemeToggle />
+    </nav>
+
+    <!-- Mobile -->
+    <div class="flex items-center gap-1 sm:hidden">
+      <ThemeToggle />
+      <button
+        type="button"
+        data-menu-toggle
+        aria-label="Abrir menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        class="group flex h-9 w-9 items-center justify-center rounded-full transition-colors hover-bg"
+      >
+        <Icon name="menu" size={18} class="group-aria-expanded:hidden" />
+        <Icon name="x" size={18} class="hidden group-aria-expanded:block" />
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <nav id="mobile-menu" hidden class="border-t border-subtle px-5 py-3 sm:hidden">
+    <div class="mx-auto flex max-w-2xl flex-col gap-1">
+      {
+        NAV_LINKS.map(link => (
+          <a
+            href={link.href}
+            {...linkProps(link.external)}
+            class="rounded-lg px-3 py-2 text-sm text-secondary-color transition-colors hover-bg"
+          >
+            {link.label}
+          </a>
+        ))
+      }
+    </div>
+  </nav>
+</header>
+
+<script>
+  const header = document.querySelector<HTMLElement>('[data-header]')!
+  const menuButton = header.querySelector<HTMLButtonElement>('[data-menu-toggle]')!
+  const menu = header.querySelector<HTMLElement>('#mobile-menu')!
+
+  const onScroll = () => {
+    const scrolled = window.scrollY > 16
+    header.classList.toggle('header-glass', scrolled)
+    header.classList.toggle('border-b', scrolled)
+    header.classList.toggle('border-subtle', scrolled)
+    header.classList.toggle('bg-main', !scrolled)
+  }
+  onScroll()
+  window.addEventListener('scroll', onScroll, { passive: true })
+
+  const setMenuOpen = (open: boolean) => {
+    menu.toggleAttribute('hidden', !open)
+    menuButton.setAttribute('aria-expanded', String(open))
+    menuButton.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu')
+  }
+  menuButton.addEventListener('click', () => setMenuOpen(menu.hasAttribute('hidden')))
+  menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setMenuOpen(false)))
+</script>

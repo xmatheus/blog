@@ -41,3 +41,11 @@ public/workbox-*.js
 public/workbox-*.map
 
 public/sitemap.xml
+
+# astro
+/dist/
+.astro/
+
+# cloudflare
+.wrangler/
+.dev.vars*

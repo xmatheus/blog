@@ -1,0 +1,26 @@
+---
+import { formatLongDate } from '@/lib/date'
+
+interface Props {
+  title: string
+  summary: string
+  createdAt: string
+  timeToRead: string
+}
+
+const { title, summary, createdAt, timeToRead } = Astro.props
+---
+
+<header class="flex flex-col gap-3 animate-in delay-1">
+  <h1 class="text-2xl font-semibold tracking-tight leading-tight text-pretty">
+    {title}
+  </h1>
+  <p class="text-secondary-color leading-relaxed text-pretty">
+    {summary}
+  </p>
+  <div class="flex items-center gap-3 text-sm text-quaternary-color">
+    <time datetime={createdAt}>{formatLongDate(createdAt)}</time>
+    <span>&middot;</span>
+    <span>{timeToRead}</span>
+  </div>
+</header>

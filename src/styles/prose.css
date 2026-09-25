@@ -1,0 +1,176 @@
+/* ========== Prose (post content) ========== */
+
+.prose-custom {
+  line-height: 1.8;
+}
+
+.prose-custom h2 {
+  font-size: 1.375rem;
+  font-weight: 600;
+  margin-top: 2.5em;
+  margin-bottom: 0.75em;
+  letter-spacing: -0.02em;
+}
+
+.prose-custom h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+}
+
+.prose-custom p {
+  margin-bottom: 1.25em;
+}
+
+.prose-custom a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--color-accent);
+  transition: text-decoration-color 0.2s;
+}
+
+.prose-custom a:hover {
+  text-decoration-color: transparent;
+}
+
+.prose-custom code {
+  font-family: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+  font-size: 0.85em;
+  padding: 0.15em 0.35em;
+  border-radius: 5px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+}
+
+:root.light .prose-custom code {
+  background-color: var(--color-surface-light);
+  border-color: var(--color-border-light);
+}
+
+.prose-custom pre code {
+  background: none;
+  padding: 0;
+  border: none;
+  font-size: 1em;
+}
+
+.prose-custom pre {
+  border-radius: 12px;
+  overflow-x: auto;
+  margin-bottom: 1.5em;
+}
+
+.prose-custom blockquote {
+  border-left: 2px solid var(--color-tertiary);
+  padding-left: 1em;
+  font-style: italic;
+  margin: 1.5em 0;
+  color: var(--color-secondary);
+}
+
+:root.light .prose-custom blockquote {
+  color: var(--color-secondary-light);
+  border-left-color: var(--color-tertiary-light);
+}
+
+.prose-custom ul, .prose-custom ol {
+  margin-bottom: 1.25em;
+  padding-left: 1.5em;
+}
+
+.prose-custom li { margin-bottom: 0.25em; }
+
+.prose-custom img {
+  max-width: 100%;
+  border-radius: 12px;
+}
+
+.prose-custom hr {
+  border: 0;
+  height: 1px;
+  margin: 2.5em 0;
+  background-color: var(--color-border);
+}
+
+:root.light .prose-custom hr {
+  background-color: var(--color-border-light);
+}
+
+/* Tables */
+.prose-custom .table-wrapper {
+  overflow-x: auto;
+  margin: 1.5em 0;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+}
+
+:root.light .prose-custom .table-wrapper {
+  border-color: var(--color-border-light);
+}
+
+.prose-custom table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875em;
+  margin: 0;
+}
+
+.prose-custom thead {
+  background-color: var(--color-surface);
+}
+
+:root.light .prose-custom thead {
+  background-color: var(--color-surface-light);
+}
+
+.prose-custom th {
+  font-weight: 600;
+  text-align: left;
+  padding: 0.625rem 0.875rem;
+  color: var(--color-secondary);
+  white-space: nowrap;
+  border-bottom: 1px solid var(--color-border);
+}
+
+:root.light .prose-custom th {
+  color: var(--color-secondary-light);
+  border-bottom-color: var(--color-border-light);
+}
+
+.prose-custom td {
+  padding: 0.625rem 0.875rem;
+  color: var(--color-secondary);
+  border-bottom: 1px solid var(--color-border);
+  vertical-align: top;
+}
+
+:root.light .prose-custom td {
+  color: var(--color-secondary-light);
+  border-bottom-color: var(--color-border-light);
+}
+
+.prose-custom tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.prose-custom tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+:root.light .prose-custom tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+/* Strong inside tables: slightly brighter but not full white */
+.prose-custom td strong,
+.prose-custom th strong {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+:root.light .prose-custom td strong,
+:root.light .prose-custom th strong {
+  color: var(--color-primary-light);
+}

@@ -1,0 +1,26 @@
+---
+import Icon from '@/components/ui/Icon.astro'
+import { SOCIAL_LINKS } from '@/config/site'
+
+interface Props {
+  class?: string
+}
+
+const { class: className } = Astro.props
+---
+
+<div class:list={['flex items-center gap-1', className]}>
+  {
+    SOCIAL_LINKS.map(({ href, icon, label }) => (
+      <a
+        href={href}
+        target="_blank"
+        rel="noreferrer"
+        aria-label={label}
+        class="flex h-9 w-9 items-center justify-center rounded-full text-quaternary-color transition-colors hover:text-primary-color hover-bg"
+      >
+        <Icon name={icon} size={16} strokeWidth={1.5} />
+      </a>
+    ))
+  }
+</div>

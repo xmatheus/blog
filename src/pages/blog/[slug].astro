@@ -1,0 +1,64 @@
+---
+import type { GetStaticPaths } from 'astro'
+import { render } from 'astro:content'
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import BackLink from '@/components/ui/BackLink.astro'
+import PostHeader from '@/components/post/PostHeader.astro'
+import { getAllPosts, postUrl, timeToRead, type Post } from '@/lib/posts'
+import { SITE, AUTHOR } from '@/config/site'
+
+export const getStaticPaths = (async () => {
+  const posts = await getAllPosts()
+  return posts.map(post => ({ params: { slug: post.id }, props: { post } }))
+}) satisfies GetStaticPaths
+
+interface Props {
+  post: Post
+}
+
+const { post } = Astro.props
+const { title, summary, createdAt, updatedAt } = post.data
+const { Content } = await render(post)
+const url = `${SITE.url}${postUrl(post)}`
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: title,
+    datePublished: createdAt,
+    dateModified: updatedAt || createdAt,
+    author: { '@type': 'Person', name: AUTHOR.fullName },
+    publisher: { '@type': 'Organization', name: 'xmatheus.dev' },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: SITE.url },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE.url}/blog` },
+      { '@type': 'ListItem', position: 3, name: title, item: url },
+    ],
+  },
+]
+---
+
+<BaseLayout
+  title={title}
+  description={summary}
+  canonical={postUrl(post)}
+  article={{ publishedTime: createdAt, modifiedTime: updatedAt || createdAt, authors: [AUTHOR.name] }}
+  jsonLd={jsonLd}
+>
+  <article class="flex flex-col gap-8">
+    <div class="animate-in">
+      <BackLink><span>Voltar</span></BackLink>
+    </div>
+
+    <PostHeader title={title} summary={summary} createdAt={createdAt} timeToRead={timeToRead(post)} />
+
+    <div class="prose-custom animate-in delay-2">
+      <Content />
+    </div>
+  </article>
+</BaseLayout>

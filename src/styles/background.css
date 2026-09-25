@@ -1,0 +1,49 @@
+/* ========== Dot Grid Background (Linear/Vercel style) ========== */
+
+.geo-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Dot grid */
+.geo-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at center, rgba(255,255,255,0.15) 1px, transparent 1px);
+  background-size: 24px 24px;
+  mask-image:
+    radial-gradient(ellipse 80% 50% at 50% 0%, black 0%, transparent 100%);
+  -webkit-mask-image:
+    radial-gradient(ellipse 80% 50% at 50% 0%, black 0%, transparent 100%);
+}
+
+/* Ambient gradient glow */
+.geo-bg::after {
+  content: '';
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  width: 800px;
+  height: 600px;
+  transform: translateX(-50%);
+  background:
+    radial-gradient(ellipse at 50% 50%, rgba(255,255,255,0.06) 0%, transparent 60%),
+    radial-gradient(ellipse at 30% 40%, rgba(255,255,255,0.03) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 40%, rgba(255,255,255,0.03) 0%, transparent 50%);
+  filter: blur(40px);
+}
+
+:root.light .geo-bg::before {
+  background-image: radial-gradient(circle at center, rgba(0,0,0,0.12) 1px, transparent 1px);
+}
+
+:root.light .geo-bg::after {
+  background:
+    radial-gradient(ellipse at 50% 50%, rgba(0,0,0,0.03) 0%, transparent 60%),
+    radial-gradient(ellipse at 30% 40%, rgba(0,0,0,0.015) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 40%, rgba(0,0,0,0.015) 0%, transparent 50%);
+}

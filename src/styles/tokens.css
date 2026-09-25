@@ -1,0 +1,39 @@
+/* Design tokens (Tailwind v4 theme) */
+@theme {
+  --color-bg: #111113;
+  --color-bg-light: #ffffff;
+  --color-surface: #1a1a1e;
+  --color-surface-light: #f6f6f7;
+  --color-primary: #e4e4e7;
+  --color-primary-light: #18181b;
+  --color-secondary: #a1a1aa;
+  --color-secondary-light: #71717a;
+  --color-tertiary: #52525b;
+  --color-tertiary-light: #a1a1aa;
+  --color-quaternary: #3f3f46;
+  --color-quaternary-light: #d4d4d8;
+  --color-accent: #6366f1;
+  --color-accent-hover: #818cf8;
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border-light: rgba(0, 0, 0, 0.08);
+}
+
+@theme {
+  --font-satoshi: 'Satoshi', ui-sans-serif, system-ui, sans-serif;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/fonts/Satoshi-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/fonts/Satoshi-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}

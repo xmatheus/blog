@@ -1,0 +1,27 @@
+---
+import Icon from '@/components/ui/Icon.astro'
+---
+
+<button
+  type="button"
+  data-theme-toggle
+  aria-label="Trocar para tema claro"
+  class="flex h-9 w-9 items-center justify-center rounded-full transition-colors hover-bg"
+>
+  <Icon name="sun" size={16} class="theme-icon-dark" />
+  <Icon name="moon" size={16} class="theme-icon-light" />
+</button>
+
+<script>
+  import { getTheme, setTheme } from '@/lib/theme'
+
+  const label = () => `Trocar para tema ${getTheme() === 'dark' ? 'claro' : 'escuro'}`
+
+  document.querySelectorAll<HTMLButtonElement>('[data-theme-toggle]').forEach(button => {
+    button.setAttribute('aria-label', label())
+    button.addEventListener('click', () => {
+      setTheme(getTheme() === 'dark' ? 'light' : 'dark')
+      document.querySelectorAll('[data-theme-toggle]').forEach(b => b.setAttribute('aria-label', label()))
+    })
+  })
+</script>

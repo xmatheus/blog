@@ -2,55 +2,18 @@
   <img src="https://github.com/xmatheus/blog/blob/master/public/seo/192_192.png?raw=true" alt="Logo do blog, junção do F mais um M, o F está localizado na perna esquerda do M">
 </p>
 
-
 ### My blog :)
 
-Write using **Markdown** and convert to **HTML**
-
-- [x] Server Side Rendering
-- [x] SEO
-- [x] Responsive
-- [x] Switch theme
-- [x] Acessibility
-- [ ] Tests
-- [ ] StoryBook
+Posts escritos em **Markdown**, site estático gerado com **Astro** e hospedado na **Cloudflare**.
 
 ### Getting Started
 
-run the development server:
-
 ```bash
-npm run dev
-# or
-yarn dev
+npm install
+npm run dev      # http://localhost:4321
+npm run build    # gera dist/
+npm run preview  # roda dist/ no runtime local da Cloudflare (wrangler)
+npm run deploy   # build + wrangler deploy
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
-
-or
-
-run the production server
-
-```bash
-npm run build; npm run start
-# or
-yarn build; yarn start
-```
-
-Open [http://localhost:3000](http://localhost:3000).
-
-
-### Tecnologies
-- [Typescript](https://www.typescriptlang.org/)
-- [Nextjs](https://nextjs.org/)
-- [Styled-components](https://styled-components.com/)
-- [Remark](https://github.com/remarkjs/remark)
-
-
-
-All posts at folder: **[posts](https://github.com/xmatheus/blog/tree/master/src/posts)**
-
-Figma: https://www.figma.com/file/eUHjkMYVBnDikQ970byfGe/blog?node-id=0%3A1
-
-Deploy(vervel): http://xmatheus.dev/ | https://blog-xmatheus.vercel.app/
-
+Para habilitar o Google Analytics, defina `PUBLIC_GA_ID` no ambiente de build.

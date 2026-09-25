@@ -1,0 +1,43 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import Hero from '@/components/home/Hero.astro'
+import Section from '@/components/home/Section.astro'
+import ProjectCard from '@/components/home/ProjectCard.astro'
+import PostCard from '@/components/home/PostCard.astro'
+import { getAllPosts } from '@/lib/posts'
+import { SITE } from '@/config/site'
+import { PROJECTS } from '@/data/projects'
+
+const posts = await getAllPosts()
+const featuredProjects = PROJECTS.filter(p => p.featured)
+
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: SITE.url }],
+}
+---
+
+<BaseLayout jsonLd={[breadcrumb]}>
+  <div class="flex flex-col gap-16">
+    <Hero />
+
+    {
+      featuredProjects.length > 0 && (
+        <Section title="Projetos" class="animate-in delay-2">
+          <div class="grid gap-3 sm:grid-cols-2">
+            {featuredProjects.map(project => (
+              <ProjectCard project={project} />
+            ))}
+          </div>
+        </Section>
+      )
+    }
+
+    <Section title="Posts" class="animate-in delay-3">
+      <div class="flex flex-col gap-0.5">
+        {posts.map(post => <PostCard post={post} />)}
+      </div>
+    </Section>
+  </div>
+</BaseLayout>

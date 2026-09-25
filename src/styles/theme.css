@@ -1,0 +1,45 @@
+/* ========== Theme-aware text ========== */
+
+.text-primary-color { color: var(--color-primary); }
+:root.light .text-primary-color { color: var(--color-primary-light); }
+
+.text-secondary-color { color: var(--color-secondary); }
+:root.light .text-secondary-color { color: var(--color-secondary-light); }
+
+.text-tertiary-color { color: var(--color-tertiary); }
+:root.light .text-tertiary-color { color: var(--color-tertiary-light); }
+
+.text-quaternary-color { color: var(--color-quaternary); }
+:root.light .text-quaternary-color { color: var(--color-quaternary-light); }
+
+/* ========== Theme-aware bg & border ========== */
+
+.bg-main { background-color: var(--color-bg); }
+:root.light .bg-main { background-color: var(--color-bg-light); }
+
+.bg-elevated { background-color: var(--color-surface); }
+:root.light .bg-elevated { background-color: var(--color-surface-light); }
+
+.border-subtle { border-color: var(--color-border); }
+:root.light .border-subtle { border-color: var(--color-border-light); }
+
+/* Hover surface */
+.hover-bg:hover { background-color: rgba(255, 255, 255, 0.06); }
+:root.light .hover-bg:hover { background-color: rgba(0, 0, 0, 0.04); }
+
+/* ========== Glass header ========== */
+
+.header-glass {
+  background-color: rgba(17, 17, 19, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+:root.light .header-glass {
+  background-color: rgba(255, 255, 255, 0.85);
+}
+
+/* ========== Theme toggle icon (sun on dark, moon on light) ========== */
+
+:root:not(.light) .theme-icon-light { display: none; }
+:root.light .theme-icon-dark { display: none; }

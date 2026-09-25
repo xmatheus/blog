@@ -1,0 +1,13 @@
+---
+import SocialLinks from '@/components/ui/SocialLinks.astro'
+import { AUTHOR } from '@/config/site'
+---
+
+<footer class="mx-auto max-w-2xl px-5 py-16">
+  <div class="flex items-center justify-between">
+    <span class="text-sm text-quaternary-color">
+      &copy; {new Date().getFullYear()} {AUTHOR.name}
+    </span>
+    <SocialLinks />
+  </div>
+</footer>
