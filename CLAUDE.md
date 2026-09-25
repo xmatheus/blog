@@ -32,5 +32,5 @@ Dark (default) and light, driven by a `dark`/`light` class on `<html>`. An inlin
 ### Conventions
 - Imports use the `@/` alias for `src/`.
 - Static files (fonts, SEO icons, post media under `public/content/`) live in `public/`.
-- Google Analytics is enabled only when `PUBLIC_GA_ID` is set at build time.
+- Google Analytics is enabled only when `PUBLIC_GA_ID` is set at build time (committed in `.env.production`, so dev builds skip it).
 - The blog content and UI strings are in Portuguese (pt-BR).

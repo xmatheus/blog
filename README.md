@@ -16,4 +16,4 @@ npm run preview  # roda dist/ no runtime local da Cloudflare (wrangler)
 npm run deploy   # build + wrangler deploy
 ```
 
-Para habilitar o Google Analytics, defina `PUBLIC_GA_ID` no ambiente de build.
+O ID do Google Analytics fica em `.env.production` (só é usado em builds de produção).
